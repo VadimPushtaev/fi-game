@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    volumes:
+      - .:/app
+      - /app/.venv
+    command:
+      [
+        "uvicorn",
+        "fi_sv_spel.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload",
+      ]
