@@ -2,13 +2,14 @@ from pathlib import Path
 from typing import Callable
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 
 from fi_game.game import DEFAULT_DECK_PATH, DEFAULT_SESSION_KEY, GameService, read_form_value
 
 BASE_DIR = Path(__file__).resolve().parents[2]
+FAVICON_PATH = BASE_DIR / "favicon.png"
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 
@@ -25,6 +26,10 @@ def create_app(
     @app.get("/", response_class=HTMLResponse)
     async def index(request: Request) -> HTMLResponse:
         return templates.TemplateResponse(request, "index.html", game_service.build_view(request))
+
+    @app.get("/favicon.png")
+    async def favicon() -> FileResponse:
+        return FileResponse(FAVICON_PATH)
 
     @app.post("/game/check", response_class=HTMLResponse)
     async def check_answer(request: Request) -> HTMLResponse:
