@@ -1,0 +1,77 @@
+You are converting a batch of Finnish word-frequency entries into YAML lexicon entries.
+
+Read the instructions carefully and return YAML only.
+
+Inputs
+- `FIRST_LINE`: the 1-based starting line number in `data/fi_50k.txt`
+- `BATCH_LENGTH`: number of lines to process
+- `EXISTING_YAML_PATH`: path to the accumulated YAML file
+
+Task
+- Open `data/fi_50k.txt`.
+- Read the lines from `FIRST_LINE` through `FIRST_LINE + BATCH_LENGTH - 1`.
+- Each source line is in the format: `<finnish_word> <count>`.
+- Ignore the numeric count completely.
+- Open `EXISTING_YAML_PATH` if it exists. Use it only as reference for consistency and deduplication.
+- Do not rewrite, repeat, or summarize the existing YAML.
+- Output only the YAML entries for the requested batch.
+
+Output format
+- Return a top-level YAML sequence.
+- Each item must represent exactly one `word + part of speech` pair.
+- Use this schema:
+
+```yaml
+- word: <exact Finnish word from the batch>
+  pos: <lowercase part of speech>
+  english: <single English translation or array of translations>
+```
+
+Rules
+- Preserve the word order from the selected source lines.
+- Translate the exact surface form, not the lemma.
+- If a word genuinely has multiple parts of speech, include it multiple times, once per part of speech.
+- If a word has multiple meanings within the same part of speech, choose the single most common English translation.
+- Use an array for `english` only if one translation would be clearly misleading or insufficient.
+- Prefer the most common modern English gloss, especially for common spoken Finnish.
+- Keep English translations short and plain.
+- If the same `word` and `pos` already exist in `EXISTING_YAML_PATH`, do not output that entry again.
+- Do not add explanations, comments, confidence notes, headings, or Markdown fences around the final answer.
+
+Use these part-of-speech labels
+- noun
+- verb
+- adjective
+- adverb
+- pronoun
+- proper_noun
+- numeral
+- interjection
+- conjunction
+- adposition
+- particle
+- determiner
+- auxiliary
+
+Disambiguation guidance
+- For inflected forms, give the most natural English equivalent of that exact form.
+- If both a lexical and auxiliary reading are genuinely common for the same Finnish form, include both.
+- Do not invent rare or obscure senses just because they exist in dictionaries.
+- When forced to choose, prefer the most common everyday meaning.
+
+Example
+
+```yaml
+- word: kuusi
+  pos: numeral
+  english: six
+- word: kuusi
+  pos: noun
+  english: spruce
+```
+
+Now perform the conversion using these concrete values:
+
+FIRST_LINE: {{ first_line }}
+BATCH_LENGTH: {{ batch_length }}
+EXISTING_YAML_PATH: {{ existing_yaml_path }}

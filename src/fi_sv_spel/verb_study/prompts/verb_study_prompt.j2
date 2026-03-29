@@ -1,0 +1,68 @@
+You are generating Finnish verb-study sentences as YAML.
+
+Return YAML only.
+
+Task
+- Generate study sentences for the Finnish verb lemma `{{ study_verb.lemma }}`.
+- The source vocabulary pool comes from the first `{{ first_n_rows }}` raw rows of `{{ lexicon_path }}`.
+- Existing output is in `{{ output_yaml_path }}`; do not repeat existing records for this lemma if they already exist there.
+
+Target verb
+- Lemma: `{{ study_verb.lemma }}`
+- Surface forms already present in the selected lexicon slice:
+{% for source_form in study_verb.source_forms -%}
+  - `{{ source_form }}`
+{% endfor %}
+
+Required forms
+{% for form in form_order -%}
+- `{{ form }}`
+{% endfor %}
+
+Vocabulary guidance
+- Prefer lexical content from the selected lexicon slice.
+- Nouns, adjectives, and similar content words should come from these allowed words whenever possible.
+- Extra non-YAML words are allowed only sparingly if needed to make the sentences more natural, less rigid, or more varied.
+- Do not use additional Finnish lexical verbs besides the target verb, except the negative auxiliary needed for `negative` sentences.
+
+Allowed words by part of speech
+{% for pos, words in allowed_words_by_pos.items()|sort -%}
+- `{{ pos }}`: {{ words|join(", ") }}
+{% endfor %}
+
+Output requirements
+- Return exactly 16 YAML items: 2 sentences for each of the 8 required forms.
+- Use a top-level YAML sequence.
+- Use this exact schema for every item:
+
+```yaml
+- verb: "{{ study_verb.lemma }}"
+  verb_form: "1sg"
+  sentence_fi: "..."
+  sentence_fi_masked: "..."
+  answer_fi: "..."
+  sentence_en: "..."
+  sentence_en_masked: "..."
+```
+
+Rules
+- `verb` must always be the lemma `{{ study_verb.lemma }}`.
+- `verb_form` must be one of: {{ form_order|join(", ") }}.
+- `answer_fi` must be the exact Finnish verb token that was replaced with `%%%%` in `sentence_fi_masked`.
+- `sentence_fi_masked` must equal `sentence_fi` with that exact token replaced by `%%%%`.
+- `sentence_en_masked` must equal the English sentence with the translation of the target verb replaced by `%%%%`.
+- Keep the surrounding English auxiliaries or negation visible when masking, for example `I do not %%%% Finnish`.
+- Every Finnish sentence must contain exactly one target verb token to mask.
+- Sentences must be simple, natural, and short enough for study use.
+- Sentences for the same `verb_form` must be genuinely different:
+  - different setting, noun choice, or wording
+  - not just a pronoun swap
+  - not just one adverb changed
+- Prefer explicit subject pronouns for the personal finite forms so the form is easy to study.
+- For `imperative`, use the singular imperative.
+- For `negative`, use a normal Finnish negative sentence and mask only the lexical target verb, not the negative auxiliary.
+- Do not add explanations, comments, or Markdown fences.
+
+Examples for masking logic
+- If `sentence_fi` is `Minä en puhu täällä.`, then `sentence_fi_masked` should be `Minä en %%%% täällä.` and `answer_fi` should be `puhu`.
+- If `sentence_en` is `I do not speak here.`, then `sentence_en_masked` should be `I do not %%%% here.`
