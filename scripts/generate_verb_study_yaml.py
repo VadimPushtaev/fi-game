@@ -77,13 +77,9 @@ def parse_args() -> argparse.Namespace:
         help="Path to the Jinja prompt template, relative to the repo root by default",
     )
     parser.add_argument(
-        "--variant",
-        help="Optional variant name used to namespace completion checks and saved generation metadata",
-    )
-    parser.add_argument(
         "--force",
         action="store_true",
-        help="Regenerate even when the selected lemma/variant is already complete",
+        help="Regenerate even when the selected lemma is already complete",
     )
     parser.add_argument("--model", help="Optional codex model override")
     parser.add_argument(
@@ -139,7 +135,7 @@ def main() -> int:
                 study_verb
                 for study_verb in study_verbs
                 if args.force
-                or not output_store.is_complete(study_verb.lemma, variant=args.variant)
+                or not output_store.is_complete(study_verb.lemma)
             ),
             None,
         )
@@ -164,7 +160,6 @@ def main() -> int:
     result = study_runner.generate_all(
         lexicon_path_for_prompt=args.lexicon_path,
         output_yaml_path_for_prompt=args.output_path,
-        variant=args.variant,
         force=args.force,
         model=args.model,
         progress_callback=report_progress,

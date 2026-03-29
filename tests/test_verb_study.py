@@ -82,7 +82,6 @@ def test_output_store_replaces_partial_records_with_complete_set(tmp_path: Path)
     store = VerbStudyOutputStore(output_path)
     generation = {
         "lexicon_path": "data/fi_50k.yaml",
-        "variant": "baseline",
         "verb_rows": {"start": 1, "end": 20},
         "vocabulary_rows": {"start": 101, "end": 160},
     }
@@ -123,7 +122,6 @@ def test_output_store_replaces_partial_records_with_complete_set(tmp_path: Path)
     assert len(store.load_records()) == 16
     assert store.load_records()[0]["generation"] == {
         "lexicon_path": "data/fi_50k.yaml",
-        "variant": "baseline",
         "verb_rows": {"start": "1", "end": "20"},
         "vocabulary_rows": {"start": "101", "end": "160"},
     }
@@ -176,7 +174,6 @@ def test_output_store_allows_ai_provided_masking_without_mechanical_replacement(
         records,
         generation_metadata={
             "lexicon_path": "data/fi_50k.yaml",
-            "variant": "baseline",
             "verb_rows": {"start": 1, "end": 5},
             "vocabulary_rows": {"start": 10, "end": 20},
         },
@@ -211,45 +208,7 @@ def test_row_range_rejects_invalid_bounds() -> None:
 
     with pytest.raises(ValueError, match=">= start"):
         RowRange(4, 3)
-
-
-def test_output_store_scopes_completion_by_variant(tmp_path: Path) -> None:
-    output_path = tmp_path / "verb_study.yaml"
-    store = VerbStudyOutputStore(output_path)
-
-    records = []
-    for verb_form in ("1sg", "2sg", "3sg", "1pl", "2pl", "3pl", "imperative", "negative"):
-        for index in range(2):
-            answer = f"antaa_{verb_form}_{index}"
-            records.append(
-                {
-                    "verb": "antaa",
-                    "verb_form": verb_form,
-                    "sentence_fi": f"Lause {verb_form} {index} {answer}.",
-                    "sentence_fi_masked": f"Lause {verb_form} {index} %%%%.",
-                    "answer_fi": answer,
-                    "sentence_en": f"Sentence {verb_form} {index} answer.",
-                    "sentence_en_masked": f"Sentence {verb_form} {index} %%%%.",
-                }
-            )
-
-    store.replace_records_for_lemma(
-        "antaa",
-        records,
-        generation_metadata={
-            "lexicon_path": "data/fi_50k.yaml",
-            "variant": "nouns_1_1000",
-            "verb_rows": {"start": 1, "end": 200},
-            "vocabulary_rows": {"start": 1, "end": 1000},
-        },
-        variant="nouns_1_1000",
-    )
-
-    assert store.is_complete("antaa", variant="nouns_1_1000")
-    assert not store.is_complete("antaa", variant="nouns_1001_2000")
-
-
-def test_runner_force_regenerates_even_when_variant_is_complete(tmp_path: Path) -> None:
+def test_runner_force_regenerates_even_when_lemma_is_complete(tmp_path: Path) -> None:
     output_path = tmp_path / "verb_study.yaml"
     store = VerbStudyOutputStore(output_path)
 
@@ -274,11 +233,9 @@ def test_runner_force_regenerates_even_when_variant_is_complete(tmp_path: Path) 
         complete_records,
         generation_metadata={
             "lexicon_path": "data/fi_50k.yaml",
-            "variant": "baseline",
             "verb_rows": {"start": 1, "end": 200},
             "vocabulary_rows": {"start": 1, "end": 1000},
         },
-        variant="baseline",
     )
 
     class StubLexiconSlice:
@@ -311,7 +268,6 @@ def test_runner_force_regenerates_even_when_variant_is_complete(tmp_path: Path) 
     result = runner.generate_all(
         lexicon_path_for_prompt="data/fi_50k.yaml",
         output_yaml_path_for_prompt="data/out.yaml",
-        variant="baseline",
         force=True,
     )
 

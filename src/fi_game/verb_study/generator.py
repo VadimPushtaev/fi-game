@@ -248,13 +248,8 @@ class VerbStudyOutputStore:
 
         return load_yaml_sequence(self.output_path)
 
-    def is_complete(self, lemma: str, *, variant: str | None = None) -> bool:
-        records = [
-            record
-            for record in self.load_records()
-            if record.get("verb") == lemma
-            and self._variant_matches(record, variant)
-        ]
+    def is_complete(self, lemma: str) -> bool:
+        records = [record for record in self.load_records() if record.get("verb") == lemma]
         if len(records) != EXPECTED_RECORDS_PER_VERB:
             return False
 
@@ -267,7 +262,6 @@ class VerbStudyOutputStore:
         records: list[dict[str, Any]],
         *,
         generation_metadata: dict[str, Any] | None = None,
-        variant: str | None = None,
     ) -> None:
         if generation_metadata is not None:
             records = [
@@ -278,14 +272,7 @@ class VerbStudyOutputStore:
                 for record in records
             ]
         self._validate_records_for_lemma(lemma, records)
-        existing = [
-            record
-            for record in self.load_records()
-            if not (
-                record.get("verb") == lemma
-                and self._variant_matches(record, variant)
-            )
-        ]
+        existing = [record for record in self.load_records() if record.get("verb") != lemma]
         combined = existing + records
 
         self.output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -357,13 +344,6 @@ class VerbStudyOutputStore:
                 raise ValueError(
                     "Study record generation field 'lexicon_path' must be a non-empty string."
                 )
-            variant = generation.get("variant")
-            if variant is not None and (
-                not isinstance(variant, str) or not variant.strip()
-            ):
-                raise ValueError(
-                    "Study record generation field 'variant' must be a non-empty string."
-                )
 
             for range_name in ("verb_rows", "vocabulary_rows"):
                 range_data = generation.get(range_name)
@@ -403,23 +383,6 @@ class VerbStudyOutputStore:
         if isinstance(value, str) and value.isdigit():
             return int(value)
         return None
-
-    @staticmethod
-    def _record_variant(record: dict[str, Any]) -> str | None:
-        generation = record.get("generation")
-        if not isinstance(generation, dict):
-            return None
-
-        variant = generation.get("variant")
-        if variant is None:
-            return None
-        return str(variant).strip() or None
-
-    @classmethod
-    def _variant_matches(cls, record: dict[str, Any], variant: str | None) -> bool:
-        if variant is None:
-            return True
-        return cls._record_variant(record) == variant
 
 
 class VerbStudyGenerator:
@@ -505,7 +468,6 @@ class VerbStudyRunner:
         *,
         lexicon_path_for_prompt: str,
         output_yaml_path_for_prompt: str,
-        variant: str | None = None,
         force: bool = False,
         model: str | None = None,
         dry_run: bool = False,
@@ -521,7 +483,7 @@ class VerbStudyRunner:
         skipped_verbs = 0
 
         for index, study_verb in enumerate(study_verbs, start=1):
-            if not force and self.output_store.is_complete(study_verb.lemma, variant=variant):
+            if not force and self.output_store.is_complete(study_verb.lemma):
                 skipped_verbs += 1
                 if progress_callback is not None:
                     progress_callback(
@@ -552,11 +514,9 @@ class VerbStudyRunner:
                 records,
                 generation_metadata={
                     "lexicon_path": lexicon_path_for_prompt,
-                    "variant": variant,
                     "verb_rows": self.lexicon_slice.verb_range.as_metadata(),
                     "vocabulary_rows": self.lexicon_slice.vocabulary_range.as_metadata(),
                 },
-                variant=variant,
             )
             generated_verbs += 1
             if progress_callback is not None:
