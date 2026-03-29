@@ -1,6 +1,11 @@
-<section id="game-panel" class="game-panel">
+<section
+  id="game-panel"
+  class="game-panel"
+  data-enter-next="{{ 'true' if can_next else 'false' }}"
+>
   <div class="panel-top">
     <form
+      id="next-card-form"
       class="inline-form"
       hx-post="/game/next"
       hx-target="#game-panel"

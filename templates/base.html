@@ -367,8 +367,44 @@
         }
       }
 
+      function submitNextCardOnEnter(event) {
+        if (event.key !== "Enter" || event.defaultPrevented) {
+          return;
+        }
+
+        if (event.shiftKey || event.ctrlKey || event.altKey || event.metaKey) {
+          return;
+        }
+
+        const target = event.target;
+        if (target instanceof HTMLElement) {
+          const tagName = target.tagName;
+          if (tagName === "INPUT" || tagName === "TEXTAREA" || tagName === "SELECT") {
+            return;
+          }
+        }
+
+        const panel = document.querySelector("#game-panel[data-enter-next='true']");
+        if (!panel) {
+          return;
+        }
+
+        const nextForm = panel.querySelector("#next-card-form");
+        if (!(nextForm instanceof HTMLFormElement)) {
+          return;
+        }
+
+        event.preventDefault();
+        if (window.htmx) {
+          window.htmx.trigger(nextForm, "submit");
+          return;
+        }
+        nextForm.requestSubmit();
+      }
+
       document.addEventListener("DOMContentLoaded", focusPrimaryInput);
       document.body.addEventListener("htmx:afterSettle", focusPrimaryInput);
+      document.addEventListener("keydown", submitNextCardOnEnter);
     </script>
   </head>
   <body>
