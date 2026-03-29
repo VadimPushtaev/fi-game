@@ -16,6 +16,7 @@ from fi_game.verb_study import (  # noqa: E402
     DEFAULT_OUTPUT_PATH,
     DEFAULT_PROMPT_PATH,
     CodexPromptRunner,
+    RowRange,
     VerbLemmaResolver,
     VerbStudyGenerator,
     VerbStudyLexiconSlice,
@@ -27,9 +28,36 @@ from fi_game.verb_study import (  # noqa: E402
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate YAML verb-study sentences from the first N rows of fi_50k.yaml."
+        description="Generate YAML verb-study sentences from separate verb and vocabulary row ranges."
     )
-    parser.add_argument("first_n_rows", type=int, help="Number of raw YAML rows to use")
+    parser.add_argument(
+        "--verb-start",
+        dest="verb_start",
+        type=int,
+        required=True,
+        help="1-based inclusive start row for study verbs",
+    )
+    parser.add_argument(
+        "--verb-end",
+        dest="verb_end",
+        type=int,
+        required=True,
+        help="1-based inclusive end row for study verbs",
+    )
+    parser.add_argument(
+        "--vocabulary-start",
+        dest="vocabulary_start",
+        type=int,
+        required=True,
+        help="1-based inclusive start row for the allowed vocabulary pool",
+    )
+    parser.add_argument(
+        "--vocabulary-end",
+        dest="vocabulary_end",
+        type=int,
+        required=True,
+        help="1-based inclusive end row for the allowed vocabulary pool",
+    )
     parser.add_argument(
         "--lexicon",
         dest="lexicon_path",
@@ -48,6 +76,15 @@ def parse_args() -> argparse.Namespace:
         default=str(DEFAULT_PROMPT_PATH.relative_to(ROOT_DIR)),
         help="Path to the Jinja prompt template, relative to the repo root by default",
     )
+    parser.add_argument(
+        "--variant",
+        help="Optional variant name used to namespace completion checks and saved generation metadata",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Regenerate even when the selected lemma/variant is already complete",
+    )
     parser.add_argument("--model", help="Optional codex model override")
     parser.add_argument(
         "--dry-run",
@@ -59,8 +96,11 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    if args.first_n_rows < 1:
-        raise SystemExit("first_n_rows must be >= 1")
+    try:
+        verb_range = RowRange(args.verb_start, args.verb_end)
+        vocabulary_range = RowRange(args.vocabulary_start, args.vocabulary_end)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
 
     lexicon_path = resolve_repo_path(args.lexicon_path)
     output_path = resolve_repo_path(args.output_path)
@@ -72,7 +112,11 @@ def main() -> int:
         raise SystemExit(f"Prompt template not found: {prompt_path}")
 
     runner = CodexPromptRunner()
-    lexicon_slice = VerbStudyLexiconSlice(lexicon_path=lexicon_path, first_n_rows=args.first_n_rows)
+    lexicon_slice = VerbStudyLexiconSlice(
+        lexicon_path=lexicon_path,
+        verb_range=verb_range,
+        vocabulary_range=vocabulary_range,
+    )
     output_store = VerbStudyOutputStore(output_path=output_path)
     study_runner = VerbStudyRunner(
         lexicon_slice=lexicon_slice,
@@ -91,7 +135,12 @@ def main() -> int:
         allowed_words_by_pos = lexicon_slice.allowed_words_by_pos()
         generator = study_runner.generator
         pending_verb = next(
-            (study_verb for study_verb in study_verbs if not output_store.is_complete(study_verb.lemma)),
+            (
+                study_verb
+                for study_verb in study_verbs
+                if args.force
+                or not output_store.is_complete(study_verb.lemma, variant=args.variant)
+            ),
             None,
         )
         if pending_verb is None:
@@ -102,7 +151,8 @@ def main() -> int:
         prompt = generator.render_prompt(
             lexicon_path=args.lexicon_path,
             output_yaml_path=args.output_path,
-            first_n_rows=args.first_n_rows,
+            verb_range=verb_range,
+            vocabulary_range=vocabulary_range,
             study_verb=pending_verb,
             allowed_words_by_pos=allowed_words_by_pos,
         )
@@ -114,6 +164,8 @@ def main() -> int:
     result = study_runner.generate_all(
         lexicon_path_for_prompt=args.lexicon_path,
         output_yaml_path_for_prompt=args.output_path,
+        variant=args.variant,
+        force=args.force,
         model=args.model,
         progress_callback=report_progress,
     )

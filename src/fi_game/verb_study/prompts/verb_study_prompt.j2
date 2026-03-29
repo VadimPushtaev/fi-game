@@ -4,7 +4,8 @@ Return YAML only.
 
 Task
 - Generate study sentences for the Finnish verb lemma `{{ study_verb.lemma }}`.
-- The source vocabulary pool comes from the first `{{ first_n_rows }}` raw rows of `{{ lexicon_path }}`.
+- Select the target study verbs only from raw rows `{{ verb_range.start }}` to `{{ verb_range.end }}` of `{{ lexicon_path }}`.
+- Build the allowed vocabulary pool only from raw rows `{{ vocabulary_range.start }}` to `{{ vocabulary_range.end }}` of `{{ lexicon_path }}`.
 - Existing output is in `{{ output_yaml_path }}`; do not repeat existing records for this lemma if they already exist there.
 
 Target verb
@@ -48,6 +49,7 @@ Output requirements
 Rules
 - `verb` must always be the lemma `{{ study_verb.lemma }}`.
 - `verb_form` must be one of: {{ form_order|join(", ") }}.
+- Do not include generation metadata in the YAML; the script will add that itself.
 - `answer_fi` must be the exact Finnish verb token that was replaced with `%%%%` in `sentence_fi_masked`.
 - `sentence_fi_masked` must equal `sentence_fi` with that exact token replaced by `%%%%`.
 - `sentence_en_masked` must equal the English sentence with the translation of the target verb replaced by `%%%%`.

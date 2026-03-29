@@ -65,6 +65,24 @@ class StudyVerb:
 
 
 @dataclass(frozen=True, slots=True)
+class RowRange:
+    start: int
+    end: int
+
+    def __post_init__(self) -> None:
+        if self.start < 1:
+            raise ValueError("Row range start must be >= 1.")
+        if self.end < self.start:
+            raise ValueError("Row range end must be >= start.")
+
+    def slice_rows(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return rows[self.start - 1 : self.end]
+
+    def as_metadata(self) -> dict[str, int]:
+        return {"start": self.start, "end": self.end}
+
+
+@dataclass(frozen=True, slots=True)
 class VerbStudyRunResult:
     total_verbs: int
     generated_verbs: int
@@ -135,22 +153,25 @@ class CodexPromptRunner:
 
 
 class VerbStudyLexiconSlice:
-    def __init__(self, lexicon_path: Path, first_n_rows: int) -> None:
-        if first_n_rows < 1:
-            raise ValueError("first_n_rows must be >= 1")
-
+    def __init__(self, lexicon_path: Path, *, verb_range: RowRange, vocabulary_range: RowRange) -> None:
         self.lexicon_path = lexicon_path
-        self.first_n_rows = first_n_rows
+        self.verb_range = verb_range
+        self.vocabulary_range = vocabulary_range
 
-    def load_rows(self) -> list[dict[str, Any]]:
-        rows = YamlLexiconStore(self.lexicon_path).load_entries()
-        return rows[: self.first_n_rows]
+    def load_all_rows(self) -> list[dict[str, Any]]:
+        return YamlLexiconStore(self.lexicon_path).load_entries()
+
+    def load_verb_rows(self) -> list[dict[str, Any]]:
+        return self.verb_range.slice_rows(self.load_all_rows())
+
+    def load_vocabulary_rows(self) -> list[dict[str, Any]]:
+        return self.vocabulary_range.slice_rows(self.load_all_rows())
 
     def eligible_surface_verbs(self) -> list[str]:
         seen: set[str] = set()
         surfaces: list[str] = []
 
-        for row in self.load_rows():
+        for row in self.load_verb_rows():
             if row.get("pos") != "verb":
                 continue
 
@@ -167,7 +188,7 @@ class VerbStudyLexiconSlice:
         buckets: dict[str, list[str]] = {}
         seen_by_pos: dict[str, set[str]] = {}
 
-        for row in self.load_rows():
+        for row in self.load_vocabulary_rows():
             pos = str(row.get("pos", "")).strip()
             word = str(row.get("word", "")).strip()
             if not pos or not word:
@@ -227,17 +248,44 @@ class VerbStudyOutputStore:
 
         return load_yaml_sequence(self.output_path)
 
-    def is_complete(self, lemma: str) -> bool:
-        records = [record for record in self.load_records() if record.get("verb") == lemma]
+    def is_complete(self, lemma: str, *, variant: str | None = None) -> bool:
+        records = [
+            record
+            for record in self.load_records()
+            if record.get("verb") == lemma
+            and self._variant_matches(record, variant)
+        ]
         if len(records) != EXPECTED_RECORDS_PER_VERB:
             return False
 
         counts = Counter(str(record.get("verb_form")) for record in records)
         return all(counts.get(form, 0) == RECORDS_PER_FORM for form in FORM_ORDER)
 
-    def replace_records_for_lemma(self, lemma: str, records: list[dict[str, Any]]) -> None:
+    def replace_records_for_lemma(
+        self,
+        lemma: str,
+        records: list[dict[str, Any]],
+        *,
+        generation_metadata: dict[str, Any] | None = None,
+        variant: str | None = None,
+    ) -> None:
+        if generation_metadata is not None:
+            records = [
+                {
+                    **record,
+                    "generation": generation_metadata,
+                }
+                for record in records
+            ]
         self._validate_records_for_lemma(lemma, records)
-        existing = [record for record in self.load_records() if record.get("verb") != lemma]
+        existing = [
+            record
+            for record in self.load_records()
+            if not (
+                record.get("verb") == lemma
+                and self._variant_matches(record, variant)
+            )
+        ]
         combined = existing + records
 
         self.output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -299,6 +347,42 @@ class VerbStudyOutputStore:
         if record["verb_form"] not in FORM_ORDER:
             raise ValueError(f"Unknown verb form '{record['verb_form']}'.")
 
+        generation = record.get("generation")
+        if generation is not None:
+            if not isinstance(generation, dict):
+                raise ValueError("Study record field 'generation' must be a mapping when present.")
+
+            lexicon_path = generation.get("lexicon_path")
+            if lexicon_path is not None and (not isinstance(lexicon_path, str) or not lexicon_path.strip()):
+                raise ValueError(
+                    "Study record generation field 'lexicon_path' must be a non-empty string."
+                )
+            variant = generation.get("variant")
+            if variant is not None and (
+                not isinstance(variant, str) or not variant.strip()
+            ):
+                raise ValueError(
+                    "Study record generation field 'variant' must be a non-empty string."
+                )
+
+            for range_name in ("verb_rows", "vocabulary_rows"):
+                range_data = generation.get(range_name)
+                if not isinstance(range_data, dict):
+                    raise ValueError(
+                        f"Study record generation field '{range_name}' must be a mapping."
+                    )
+                start = self._parse_positive_int(range_data.get("start"))
+                end = self._parse_positive_int(range_data.get("end"))
+                if start is None or end is None:
+                    raise ValueError(
+                        f"Study record generation field '{range_name}' must contain integer "
+                        "'start' and 'end'."
+                    )
+                if start < 1 or end < start:
+                    raise ValueError(
+                        f"Study record generation field '{range_name}' has an invalid range."
+                    )
+
         answer = record["answer_fi"]
         sentence = record["sentence_fi"]
         masked_sentence = record["sentence_fi_masked"]
@@ -312,6 +396,31 @@ class VerbStudyOutputStore:
         if record["sentence_en_masked"].count("%%%%") != 1:
             raise ValueError("The masked English sentence must contain exactly one %%%% placeholder.")
 
+    @staticmethod
+    def _parse_positive_int(value: Any) -> int | None:
+        if isinstance(value, int):
+            return value
+        if isinstance(value, str) and value.isdigit():
+            return int(value)
+        return None
+
+    @staticmethod
+    def _record_variant(record: dict[str, Any]) -> str | None:
+        generation = record.get("generation")
+        if not isinstance(generation, dict):
+            return None
+
+        variant = generation.get("variant")
+        if variant is None:
+            return None
+        return str(variant).strip() or None
+
+    @classmethod
+    def _variant_matches(cls, record: dict[str, Any], variant: str | None) -> bool:
+        if variant is None:
+            return True
+        return cls._record_variant(record) == variant
+
 
 class VerbStudyGenerator:
     def __init__(self, prompt_path: Path, runner: CodexPromptRunner) -> None:
@@ -323,7 +432,8 @@ class VerbStudyGenerator:
         *,
         lexicon_path: str,
         output_yaml_path: str,
-        first_n_rows: int,
+        verb_range: RowRange,
+        vocabulary_range: RowRange,
         study_verb: StudyVerb,
         allowed_words_by_pos: dict[str, list[str]],
     ) -> str:
@@ -331,7 +441,8 @@ class VerbStudyGenerator:
         return template.render(
             lexicon_path=lexicon_path,
             output_yaml_path=output_yaml_path,
-            first_n_rows=first_n_rows,
+            verb_range=verb_range,
+            vocabulary_range=vocabulary_range,
             form_order=FORM_ORDER,
             study_verb=study_verb,
             allowed_words_by_pos=allowed_words_by_pos,
@@ -342,7 +453,8 @@ class VerbStudyGenerator:
         *,
         lexicon_path: str,
         output_yaml_path: str,
-        first_n_rows: int,
+        verb_range: RowRange,
+        vocabulary_range: RowRange,
         study_verb: StudyVerb,
         allowed_words_by_pos: dict[str, list[str]],
         model: str | None = None,
@@ -350,7 +462,8 @@ class VerbStudyGenerator:
         prompt = self.render_prompt(
             lexicon_path=lexicon_path,
             output_yaml_path=output_yaml_path,
-            first_n_rows=first_n_rows,
+            verb_range=verb_range,
+            vocabulary_range=vocabulary_range,
             study_verb=study_verb,
             allowed_words_by_pos=allowed_words_by_pos,
         )
@@ -392,6 +505,8 @@ class VerbStudyRunner:
         *,
         lexicon_path_for_prompt: str,
         output_yaml_path_for_prompt: str,
+        variant: str | None = None,
+        force: bool = False,
         model: str | None = None,
         dry_run: bool = False,
         progress_callback: Callable[[str], None] | None = None,
@@ -406,7 +521,7 @@ class VerbStudyRunner:
         skipped_verbs = 0
 
         for index, study_verb in enumerate(study_verbs, start=1):
-            if self.output_store.is_complete(study_verb.lemma):
+            if not force and self.output_store.is_complete(study_verb.lemma, variant=variant):
                 skipped_verbs += 1
                 if progress_callback is not None:
                     progress_callback(
@@ -426,12 +541,23 @@ class VerbStudyRunner:
             records = self.generator.generate_records_for_verb(
                 lexicon_path=lexicon_path_for_prompt,
                 output_yaml_path=output_yaml_path_for_prompt,
-                first_n_rows=self.lexicon_slice.first_n_rows,
+                verb_range=self.lexicon_slice.verb_range,
+                vocabulary_range=self.lexicon_slice.vocabulary_range,
                 study_verb=study_verb,
                 allowed_words_by_pos=allowed_words_by_pos,
                 model=model,
             )
-            self.output_store.replace_records_for_lemma(study_verb.lemma, records)
+            self.output_store.replace_records_for_lemma(
+                study_verb.lemma,
+                records,
+                generation_metadata={
+                    "lexicon_path": lexicon_path_for_prompt,
+                    "variant": variant,
+                    "verb_rows": self.lexicon_slice.verb_range.as_metadata(),
+                    "vocabulary_rows": self.lexicon_slice.vocabulary_range.as_metadata(),
+                },
+                variant=variant,
+            )
             generated_verbs += 1
             if progress_callback is not None:
                 progress_callback(

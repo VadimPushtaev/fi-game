@@ -1,0 +1,1487 @@
+- verb: pitää
+  verb_form: 1sg
+  sentence_fi: Minä pidän hänestä.
+  sentence_fi_masked: Minä %%%% hänestä.
+  answer_fi: pidän
+  sentence_en: I like him/her.
+  sentence_en_masked: I %%%% him/her.
+  generation: &id001
+    lexicon_path: data/fi_50k.yaml
+    verb_rows:
+      start: '1'
+      end: '200'
+    vocabulary_rows:
+      start: '1001'
+      end: '1100'
+- verb: pitää
+  verb_form: 1sg
+  sentence_fi: Minä pidän tästä asiasta.
+  sentence_fi_masked: Minä %%%% tästä asiasta.
+  answer_fi: pidän
+  sentence_en: I like this thing.
+  sentence_en_masked: I %%%% this thing.
+  generation: *id001
+- verb: pitää
+  verb_form: 2sg
+  sentence_fi: Sinä pidät teestä.
+  sentence_fi_masked: Sinä %%%% teestä.
+  answer_fi: pidät
+  sentence_en: You like tea.
+  sentence_en_masked: You %%%% tea.
+  generation: *id001
+- verb: pitää
+  verb_form: 2sg
+  sentence_fi: Sinä pidät hänestä enemmän.
+  sentence_fi_masked: Sinä %%%% hänestä enemmän.
+  answer_fi: pidät
+  sentence_en: You like him/her more.
+  sentence_en_masked: You %%%% him/her more.
+  generation: *id001
+- verb: pitää
+  verb_form: 3sg
+  sentence_fi: Hän pitää tästä.
+  sentence_fi_masked: Hän %%%% tästä.
+  answer_fi: pitää
+  sentence_en: He/She likes this.
+  sentence_en_masked: He/She %%%% this.
+  generation: *id001
+- verb: pitää
+  verb_form: 3sg
+  sentence_fi: Hän pitää pojasta.
+  sentence_fi_masked: Hän %%%% pojasta.
+  answer_fi: pitää
+  sentence_en: He/She likes the boy.
+  sentence_en_masked: He/She %%%% the boy.
+  generation: *id001
+- verb: pitää
+  verb_form: 1pl
+  sentence_fi: Me pidämme teestä.
+  sentence_fi_masked: Me %%%% teestä.
+  answer_fi: pidämme
+  sentence_en: We like tea.
+  sentence_en_masked: We %%%% tea.
+  generation: *id001
+- verb: pitää
+  verb_form: 1pl
+  sentence_fi: Me pidämme tästä enemmän.
+  sentence_fi_masked: Me %%%% tästä enemmän.
+  answer_fi: pidämme
+  sentence_en: We like this more.
+  sentence_en_masked: We %%%% this more.
+  generation: *id001
+- verb: pitää
+  verb_form: 2pl
+  sentence_fi: Te pidätte hänestä.
+  sentence_fi_masked: Te %%%% hänestä.
+  answer_fi: pidätte
+  sentence_en: You like him/her.
+  sentence_en_masked: You %%%% him/her.
+  generation: *id001
+- verb: pitää
+  verb_form: 2pl
+  sentence_fi: Te pidätte tästä asiasta.
+  sentence_fi_masked: Te %%%% tästä asiasta.
+  answer_fi: pidätte
+  sentence_en: You like this thing.
+  sentence_en_masked: You %%%% this thing.
+  generation: *id001
+- verb: pitää
+  verb_form: 3pl
+  sentence_fi: He pitävät teestä.
+  sentence_fi_masked: He %%%% teestä.
+  answer_fi: pitävät
+  sentence_en: They like tea.
+  sentence_en_masked: They %%%% tea.
+  generation: *id001
+- verb: pitää
+  verb_form: 3pl
+  sentence_fi: He pitävät pojasta.
+  sentence_fi_masked: He %%%% pojasta.
+  answer_fi: pitävät
+  sentence_en: They like the boy.
+  sentence_en_masked: They %%%% the boy.
+  generation: *id001
+- verb: pitää
+  verb_form: imperative
+  sentence_fi: Pidä tästä.
+  sentence_fi_masked: '%%%% tästä.'
+  answer_fi: Pidä
+  sentence_en: Enjoy this.
+  sentence_en_masked: '%%%% this.'
+  generation: *id001
+- verb: pitää
+  verb_form: imperative
+  sentence_fi: Pidä teestä.
+  sentence_fi_masked: '%%%% teestä.'
+  answer_fi: Pidä
+  sentence_en: Enjoy the tea.
+  sentence_en_masked: '%%%% the tea.'
+  generation: *id001
+- verb: pitää
+  verb_form: negative
+  sentence_fi: Minä en pidä siitä.
+  sentence_fi_masked: Minä en %%%% siitä.
+  answer_fi: pidä
+  sentence_en: I do not like it.
+  sentence_en_masked: I do not %%%% it.
+  generation: *id001
+- verb: pitää
+  verb_form: negative
+  sentence_fi: He eivät pidä tästä asiasta.
+  sentence_fi_masked: He eivät %%%% tästä asiasta.
+  answer_fi: pidä
+  sentence_en: They do not like this thing.
+  sentence_en_masked: They do not %%%% this thing.
+  generation: *id001
+- verb: tietää
+  verb_form: 1sg
+  sentence_fi: Minä tiedän hänestä enemmän.
+  sentence_fi_masked: Minä %%%% hänestä enemmän.
+  answer_fi: tiedän
+  sentence_en: I know more about him.
+  sentence_en_masked: I %%%% more about him.
+  generation: &id002
+    lexicon_path: data/fi_50k.yaml
+    verb_rows:
+      start: '1'
+      end: '200'
+    vocabulary_rows:
+      start: '1001'
+      end: '1100'
+- verb: tietää
+  verb_form: 1sg
+  sentence_fi: Minä tiedän tästä asiasta.
+  sentence_fi_masked: Minä %%%% tästä asiasta.
+  answer_fi: tiedän
+  sentence_en: I know about this matter.
+  sentence_en_masked: I %%%% about this matter.
+  generation: *id002
+- verb: tietää
+  verb_form: 2sg
+  sentence_fi: Sinä tiedät pojasta enemmän.
+  sentence_fi_masked: Sinä %%%% pojasta enemmän.
+  answer_fi: tiedät
+  sentence_en: You know more about the boy.
+  sentence_en_masked: You %%%% more about the boy.
+  generation: *id002
+- verb: tietää
+  verb_form: 2sg
+  sentence_fi: Sinä tiedät tästä asiasta.
+  sentence_fi_masked: Sinä %%%% tästä asiasta.
+  answer_fi: tiedät
+  sentence_en: You know about this matter.
+  sentence_en_masked: You %%%% about this matter.
+  generation: *id002
+- verb: tietää
+  verb_form: 3sg
+  sentence_fi: Hän tietää hänestä enemmän.
+  sentence_fi_masked: Hän %%%% hänestä enemmän.
+  answer_fi: tietää
+  sentence_en: He knows more about him.
+  sentence_en_masked: He %%%% more about him.
+  generation: *id002
+- verb: tietää
+  verb_form: 3sg
+  sentence_fi: Hän tietää tämän asian.
+  sentence_fi_masked: Hän %%%% tämän asian.
+  answer_fi: tietää
+  sentence_en: He knows this matter.
+  sentence_en_masked: He %%%% this matter.
+  generation: *id002
+- verb: tietää
+  verb_form: 1pl
+  sentence_fi: Me tiedämme pojasta enemmän.
+  sentence_fi_masked: Me %%%% pojasta enemmän.
+  answer_fi: tiedämme
+  sentence_en: We know more about the boy.
+  sentence_en_masked: We %%%% more about the boy.
+  generation: *id002
+- verb: tietää
+  verb_form: 1pl
+  sentence_fi: Me tiedämme tästä asiasta.
+  sentence_fi_masked: Me %%%% tästä asiasta.
+  answer_fi: tiedämme
+  sentence_en: We know about this matter.
+  sentence_en_masked: We %%%% about this matter.
+  generation: *id002
+- verb: tietää
+  verb_form: 2pl
+  sentence_fi: Te tiedätte hänestä enemmän.
+  sentence_fi_masked: Te %%%% hänestä enemmän.
+  answer_fi: tiedätte
+  sentence_en: You know more about him.
+  sentence_en_masked: You %%%% more about him.
+  generation: *id002
+- verb: tietää
+  verb_form: 2pl
+  sentence_fi: Te tiedätte tämän asian.
+  sentence_fi_masked: Te %%%% tämän asian.
+  answer_fi: tiedätte
+  sentence_en: You know this matter.
+  sentence_en_masked: You %%%% this matter.
+  generation: *id002
+- verb: tietää
+  verb_form: 3pl
+  sentence_fi: He tietävät pojasta enemmän.
+  sentence_fi_masked: He %%%% pojasta enemmän.
+  answer_fi: tietävät
+  sentence_en: They know more about the boy.
+  sentence_en_masked: They %%%% more about the boy.
+  generation: *id002
+- verb: tietää
+  verb_form: 3pl
+  sentence_fi: He tietävät tästä asiasta.
+  sentence_fi_masked: He %%%% tästä asiasta.
+  answer_fi: tietävät
+  sentence_en: They know about this matter.
+  sentence_en_masked: They %%%% about this matter.
+  generation: *id002
+- verb: tietää
+  verb_form: imperative
+  sentence_fi: Tiedä tämä hänestä.
+  sentence_fi_masked: '%%%% tämä hänestä.'
+  answer_fi: tiedä
+  sentence_en: Know this about him.
+  sentence_en_masked: '%%%% this about him.'
+  generation: *id002
+- verb: tietää
+  verb_form: imperative
+  sentence_fi: Tiedä enemmän tästä asiasta.
+  sentence_fi_masked: '%%%% enemmän tästä asiasta.'
+  answer_fi: tiedä
+  sentence_en: Know more about this matter.
+  sentence_en_masked: '%%%% more about this matter.'
+  generation: *id002
+- verb: tietää
+  verb_form: negative
+  sentence_fi: Minä en tiedä tästä asiasta.
+  sentence_fi_masked: Minä en %%%% tästä asiasta.
+  answer_fi: tiedä
+  sentence_en: I do not know about this matter.
+  sentence_en_masked: I do not %%%% about this matter.
+  generation: *id002
+- verb: tietää
+  verb_form: negative
+  sentence_fi: He eivät tiedä tätä asiaa.
+  sentence_fi_masked: He eivät %%%% tätä asiaa.
+  answer_fi: tiedä
+  sentence_en: They do not know this matter.
+  sentence_en_masked: They do not %%%% this matter.
+  generation: *id002
+- verb: tuoda
+  verb_form: 1sg
+  sentence_fi: Minä tuon asian sisään.
+  sentence_fi_masked: Minä %%%% asian sisään.
+  answer_fi: tuon
+  sentence_en: I bring the thing in.
+  sentence_en_masked: I %%%% the thing in.
+  generation: &id003
+    lexicon_path: data/fi_50k.yaml
+    verb_rows:
+      start: '1'
+      end: '200'
+    vocabulary_rows:
+      start: '1001'
+      end: '1100'
+- verb: tuoda
+  verb_form: 1sg
+  sentence_fi: Minä tuon teidät täältä.
+  sentence_fi_masked: Minä %%%% teidät täältä.
+  answer_fi: tuon
+  sentence_en: I bring you from here.
+  sentence_en_masked: I %%%% you from here.
+  generation: *id003
+- verb: tuoda
+  verb_form: 2sg
+  sentence_fi: Sinä tuot pojan sisään.
+  sentence_fi_masked: Sinä %%%% pojan sisään.
+  answer_fi: tuot
+  sentence_en: You bring the boy in.
+  sentence_en_masked: You %%%% the boy in.
+  generation: *id003
+- verb: tuoda
+  verb_form: 2sg
+  sentence_fi: Sinä tuot asian täältä.
+  sentence_fi_masked: Sinä %%%% asian täältä.
+  answer_fi: tuot
+  sentence_en: You bring the thing from here.
+  sentence_en_masked: You %%%% the thing from here.
+  generation: *id003
+- verb: tuoda
+  verb_form: 3sg
+  sentence_fi: Hän tuo heidät sisään.
+  sentence_fi_masked: Hän %%%% heidät sisään.
+  answer_fi: tuo
+  sentence_en: He brings them in.
+  sentence_en_masked: He %%%% them in.
+  generation: *id003
+- verb: tuoda
+  verb_form: 3sg
+  sentence_fi: Hän tuo enemmän täältä.
+  sentence_fi_masked: Hän %%%% enemmän täältä.
+  answer_fi: tuo
+  sentence_en: He brings more from here.
+  sentence_en_masked: He %%%% more from here.
+  generation: *id003
+- verb: tuoda
+  verb_form: 1pl
+  sentence_fi: Me tuomme pojan täältä.
+  sentence_fi_masked: Me %%%% pojan täältä.
+  answer_fi: tuomme
+  sentence_en: We bring the boy from here.
+  sentence_en_masked: We %%%% the boy from here.
+  generation: *id003
+- verb: tuoda
+  verb_form: 1pl
+  sentence_fi: Me tuomme asian sisään.
+  sentence_fi_masked: Me %%%% asian sisään.
+  answer_fi: tuomme
+  sentence_en: We bring the thing in.
+  sentence_en_masked: We %%%% the thing in.
+  generation: *id003
+- verb: tuoda
+  verb_form: 2pl
+  sentence_fi: Te tuotte heidät sisään.
+  sentence_fi_masked: Te %%%% heidät sisään.
+  answer_fi: tuotte
+  sentence_en: You bring them in.
+  sentence_en_masked: You %%%% them in.
+  generation: *id003
+- verb: tuoda
+  verb_form: 2pl
+  sentence_fi: Te tuotte enemmän täältä.
+  sentence_fi_masked: Te %%%% enemmän täältä.
+  answer_fi: tuotte
+  sentence_en: You bring more from here.
+  sentence_en_masked: You %%%% more from here.
+  generation: *id003
+- verb: tuoda
+  verb_form: 3pl
+  sentence_fi: He tuovat asian täältä.
+  sentence_fi_masked: He %%%% asian täältä.
+  answer_fi: tuovat
+  sentence_en: They bring the thing from here.
+  sentence_en_masked: They %%%% the thing from here.
+  generation: *id003
+- verb: tuoda
+  verb_form: 3pl
+  sentence_fi: He tuovat teidät sisään.
+  sentence_fi_masked: He %%%% teidät sisään.
+  answer_fi: tuovat
+  sentence_en: They bring you in.
+  sentence_en_masked: They %%%% you in.
+  generation: *id003
+- verb: tuoda
+  verb_form: imperative
+  sentence_fi: Tuo poika sisään.
+  sentence_fi_masked: '%%%% poika sisään.'
+  answer_fi: Tuo
+  sentence_en: Bring the boy in.
+  sentence_en_masked: '%%%% the boy in.'
+  generation: *id003
+- verb: tuoda
+  verb_form: imperative
+  sentence_fi: Tuo asia täältä.
+  sentence_fi_masked: '%%%% asia täältä.'
+  answer_fi: Tuo
+  sentence_en: Bring the thing from here.
+  sentence_en_masked: '%%%% the thing from here.'
+  generation: *id003
+- verb: tuoda
+  verb_form: negative
+  sentence_fi: Minä en tuo poikaa sisään.
+  sentence_fi_masked: Minä en %%%% poikaa sisään.
+  answer_fi: tuo
+  sentence_en: I do not bring the boy in.
+  sentence_en_masked: I do not %%%% the boy in.
+  generation: *id003
+- verb: tuoda
+  verb_form: negative
+  sentence_fi: He eivät tuo asiaa täältä.
+  sentence_fi_masked: He eivät %%%% asiaa täältä.
+  answer_fi: tuo
+  sentence_en: They do not bring the thing from here.
+  sentence_en_masked: They do not %%%% the thing from here.
+  generation: *id003
+- verb: haluta
+  verb_form: 1sg
+  sentence_fi: Minä haluan teetä.
+  sentence_fi_masked: Minä %%%% teetä.
+  answer_fi: haluan
+  sentence_en: I want tea.
+  sentence_en_masked: I %%%% tea.
+  generation: &id004
+    lexicon_path: data/fi_50k.yaml
+    verb_rows:
+      start: '1'
+      end: '200'
+    vocabulary_rows:
+      start: '1001'
+      end: '1100'
+- verb: haluta
+  verb_form: 1sg
+  sentence_fi: Minä haluan sisään.
+  sentence_fi_masked: Minä %%%% sisään.
+  answer_fi: haluan
+  sentence_en: I want in.
+  sentence_en_masked: I %%%% in.
+  generation: *id004
+- verb: haluta
+  verb_form: 2sg
+  sentence_fi: Sinä haluat enemmän.
+  sentence_fi_masked: Sinä %%%% enemmän.
+  answer_fi: haluat
+  sentence_en: You want more.
+  sentence_en_masked: You %%%% more.
+  generation: *id004
+- verb: haluta
+  verb_form: 2sg
+  sentence_fi: Sinä haluat pois täältä.
+  sentence_fi_masked: Sinä %%%% pois täältä.
+  answer_fi: haluat
+  sentence_en: You want out of here.
+  sentence_en_masked: You %%%% out of here.
+  generation: *id004
+- verb: haluta
+  verb_form: 3sg
+  sentence_fi: Hän haluaa tämän asian.
+  sentence_fi_masked: Hän %%%% tämän asian.
+  answer_fi: haluaa
+  sentence_en: He wants this thing.
+  sentence_en_masked: He %%%% this thing.
+  generation: *id004
+- verb: haluta
+  verb_form: 3sg
+  sentence_fi: Hän haluaa teitä.
+  sentence_fi_masked: Hän %%%% teitä.
+  answer_fi: haluaa
+  sentence_en: He wants you.
+  sentence_en_masked: He %%%% you.
+  generation: *id004
+- verb: haluta
+  verb_form: 1pl
+  sentence_fi: Me haluamme tämän asian.
+  sentence_fi_masked: Me %%%% tämän asian.
+  answer_fi: haluamme
+  sentence_en: We want this thing.
+  sentence_en_masked: We %%%% this thing.
+  generation: *id004
+- verb: haluta
+  verb_form: 1pl
+  sentence_fi: Me haluamme pois täältä.
+  sentence_fi_masked: Me %%%% pois täältä.
+  answer_fi: haluamme
+  sentence_en: We want out of here.
+  sentence_en_masked: We %%%% out of here.
+  generation: *id004
+- verb: haluta
+  verb_form: 2pl
+  sentence_fi: Te haluatte teetä.
+  sentence_fi_masked: Te %%%% teetä.
+  answer_fi: haluatte
+  sentence_en: You want tea.
+  sentence_en_masked: You %%%% tea.
+  generation: *id004
+- verb: haluta
+  verb_form: 2pl
+  sentence_fi: Te haluatte heidät sisään.
+  sentence_fi_masked: Te %%%% heidät sisään.
+  answer_fi: haluatte
+  sentence_en: You want them in.
+  sentence_en_masked: You %%%% them in.
+  generation: *id004
+- verb: haluta
+  verb_form: 3pl
+  sentence_fi: He haluavat enemmän.
+  sentence_fi_masked: He %%%% enemmän.
+  answer_fi: haluavat
+  sentence_en: They want more.
+  sentence_en_masked: They %%%% more.
+  generation: *id004
+- verb: haluta
+  verb_form: 3pl
+  sentence_fi: He haluavat tämän asian.
+  sentence_fi_masked: He %%%% tämän asian.
+  answer_fi: haluavat
+  sentence_en: They want this thing.
+  sentence_en_masked: They %%%% this thing.
+  generation: *id004
+- verb: haluta
+  verb_form: imperative
+  sentence_fi: Halua enemmän.
+  sentence_fi_masked: '%%%% enemmän.'
+  answer_fi: halua
+  sentence_en: Want more.
+  sentence_en_masked: '%%%% more.'
+  generation: *id004
+- verb: haluta
+  verb_form: imperative
+  sentence_fi: Halua sisään.
+  sentence_fi_masked: '%%%% sisään.'
+  answer_fi: halua
+  sentence_en: Want in.
+  sentence_en_masked: '%%%% in.'
+  generation: *id004
+- verb: haluta
+  verb_form: negative
+  sentence_fi: Minä en halua teetä.
+  sentence_fi_masked: Minä en %%%% teetä.
+  answer_fi: halua
+  sentence_en: I do not want tea.
+  sentence_en_masked: I do not %%%% tea.
+  generation: *id004
+- verb: haluta
+  verb_form: negative
+  sentence_fi: He eivät halua tätä asiaa.
+  sentence_fi_masked: He eivät %%%% tätä asiaa.
+  answer_fi: halua
+  sentence_en: They do not want this thing.
+  sentence_en_masked: They do not %%%% this thing.
+  generation: *id004
+- verb: tehdä
+  verb_form: 1sg
+  sentence_fi: Minä teen tämän nyt.
+  sentence_fi_masked: Minä %%%% tämän nyt.
+  answer_fi: teen
+  sentence_en: I do this now.
+  sentence_en_masked: I %%%% this now.
+  generation: &id005
+    lexicon_path: data/fi_50k.yaml
+    verb_rows:
+      start: '1'
+      end: '200'
+    vocabulary_rows:
+      start: '1001'
+      end: '1100'
+- verb: tehdä
+  verb_form: 1sg
+  sentence_fi: Minä teen tämän hänen takiaan.
+  sentence_fi_masked: Minä %%%% tämän hänen takiaan.
+  answer_fi: teen
+  sentence_en: I do this because of him.
+  sentence_en_masked: I %%%% this because of him.
+  generation: *id005
+- verb: tehdä
+  verb_form: 2sg
+  sentence_fi: Sinä teet enemmän nyt.
+  sentence_fi_masked: Sinä %%%% enemmän nyt.
+  answer_fi: teet
+  sentence_en: You do more now.
+  sentence_en_masked: You %%%% more now.
+  generation: *id005
+- verb: tehdä
+  verb_form: 2sg
+  sentence_fi: Sinä teet tämän täältä.
+  sentence_fi_masked: Sinä %%%% tämän täältä.
+  answer_fi: teet
+  sentence_en: You do this from here.
+  sentence_en_masked: You %%%% this from here.
+  generation: *id005
+- verb: tehdä
+  verb_form: 3sg
+  sentence_fi: Hän tekee tämän nyt.
+  sentence_fi_masked: Hän %%%% tämän nyt.
+  answer_fi: tekee
+  sentence_en: He does this now.
+  sentence_en_masked: He %%%% this now.
+  generation: *id005
+- verb: tehdä
+  verb_form: 3sg
+  sentence_fi: Hän tekee enemmän täällä.
+  sentence_fi_masked: Hän %%%% enemmän täällä.
+  answer_fi: tekee
+  sentence_en: He does more here.
+  sentence_en_masked: He %%%% more here.
+  generation: *id005
+- verb: tehdä
+  verb_form: 1pl
+  sentence_fi: Me teemme enemmän nyt.
+  sentence_fi_masked: Me %%%% enemmän nyt.
+  answer_fi: teemme
+  sentence_en: We do more now.
+  sentence_en_masked: We %%%% more now.
+  generation: *id005
+- verb: tehdä
+  verb_form: 1pl
+  sentence_fi: Me teemme tämän hänen takiaan.
+  sentence_fi_masked: Me %%%% tämän hänen takiaan.
+  answer_fi: teemme
+  sentence_en: We do this because of him.
+  sentence_en_masked: We %%%% this because of him.
+  generation: *id005
+- verb: tehdä
+  verb_form: 2pl
+  sentence_fi: Te teette tämän täällä.
+  sentence_fi_masked: Te %%%% tämän täällä.
+  answer_fi: teette
+  sentence_en: You do this here.
+  sentence_en_masked: You %%%% this here.
+  generation: *id005
+- verb: tehdä
+  verb_form: 2pl
+  sentence_fi: Te teette enemmän nyt.
+  sentence_fi_masked: Te %%%% enemmän nyt.
+  answer_fi: teette
+  sentence_en: You do more now.
+  sentence_en_masked: You %%%% more now.
+  generation: *id005
+- verb: tehdä
+  verb_form: 3pl
+  sentence_fi: He tekevät tämän nyt.
+  sentence_fi_masked: He %%%% tämän nyt.
+  answer_fi: tekevät
+  sentence_en: They do this now.
+  sentence_en_masked: They %%%% this now.
+  generation: *id005
+- verb: tehdä
+  verb_form: 3pl
+  sentence_fi: He tekevät enemmän täällä.
+  sentence_fi_masked: He %%%% enemmän täällä.
+  answer_fi: tekevät
+  sentence_en: They do more here.
+  sentence_en_masked: They %%%% more here.
+  generation: *id005
+- verb: tehdä
+  verb_form: imperative
+  sentence_fi: Tee tämä nyt.
+  sentence_fi_masked: '%%%% tämä nyt.'
+  answer_fi: Tee
+  sentence_en: Do this now.
+  sentence_en_masked: '%%%% this now.'
+  generation: *id005
+- verb: tehdä
+  verb_form: imperative
+  sentence_fi: Tee enemmän täällä.
+  sentence_fi_masked: '%%%% enemmän täällä.'
+  answer_fi: Tee
+  sentence_en: Do more here.
+  sentence_en_masked: '%%%% more here.'
+  generation: *id005
+- verb: tehdä
+  verb_form: negative
+  sentence_fi: Minä en tee tätä nyt.
+  sentence_fi_masked: Minä en %%%% tätä nyt.
+  answer_fi: tee
+  sentence_en: I do not do this now.
+  sentence_en_masked: I do not %%%% this now.
+  generation: *id005
+- verb: tehdä
+  verb_form: negative
+  sentence_fi: He eivät tee tätä hänen takiaan.
+  sentence_fi_masked: He eivät %%%% tätä hänen takiaan.
+  answer_fi: tee
+  sentence_en: They do not do this because of him.
+  sentence_en_masked: They do not %%%% this because of him.
+  generation: *id005
+- verb: saada
+  verb_form: 1sg
+  sentence_fi: Minä saan sen takaisin.
+  sentence_fi_masked: Minä %%%% sen takaisin.
+  answer_fi: saan
+  sentence_en: I get it back.
+  sentence_en_masked: I %%%% it back.
+  generation: &id006
+    lexicon_path: data/fi_50k.yaml
+    verb_rows:
+      start: '1'
+      end: '200'
+    vocabulary_rows:
+      start: '1001'
+      end: '1100'
+- verb: saada
+  verb_form: 1sg
+  sentence_fi: Minä saan enemmän täältä.
+  sentence_fi_masked: Minä %%%% enemmän täältä.
+  answer_fi: saan
+  sentence_en: I get more from here.
+  sentence_en_masked: I %%%% more from here.
+  generation: *id006
+- verb: saada
+  verb_form: 2sg
+  sentence_fi: Sinä saat tämän asian.
+  sentence_fi_masked: Sinä %%%% tämän asian.
+  answer_fi: saat
+  sentence_en: You get this thing.
+  sentence_en_masked: You %%%% this thing.
+  generation: *id006
+- verb: saada
+  verb_form: 2sg
+  sentence_fi: Sinä saat hänet pois.
+  sentence_fi_masked: Sinä %%%% hänet pois.
+  answer_fi: saat
+  sentence_en: You get him out.
+  sentence_en_masked: You %%%% him out.
+  generation: *id006
+- verb: saada
+  verb_form: 3sg
+  sentence_fi: Hän saa sen nyt.
+  sentence_fi_masked: Hän %%%% sen nyt.
+  answer_fi: saa
+  sentence_en: He gets it now.
+  sentence_en_masked: He %%%% it now.
+  generation: *id006
+- verb: saada
+  verb_form: 3sg
+  sentence_fi: Hän saa heidät sisään.
+  sentence_fi_masked: Hän %%%% heidät sisään.
+  answer_fi: saa
+  sentence_en: He gets them inside.
+  sentence_en_masked: He %%%% them inside.
+  generation: *id006
+- verb: saada
+  verb_form: 1pl
+  sentence_fi: Me saamme tämän täältä.
+  sentence_fi_masked: Me %%%% tämän täältä.
+  answer_fi: saamme
+  sentence_en: We get this from here.
+  sentence_en_masked: We %%%% this from here.
+  generation: *id006
+- verb: saada
+  verb_form: 1pl
+  sentence_fi: Me saamme heidät tänne.
+  sentence_fi_masked: Me %%%% heidät tänne.
+  answer_fi: saamme
+  sentence_en: We get them here.
+  sentence_en_masked: We %%%% them here.
+  generation: *id006
+- verb: saada
+  verb_form: 2pl
+  sentence_fi: Te saatte enemmän nyt.
+  sentence_fi_masked: Te %%%% enemmän nyt.
+  answer_fi: saatte
+  sentence_en: You get more now.
+  sentence_en_masked: You %%%% more now.
+  generation: *id006
+- verb: saada
+  verb_form: 2pl
+  sentence_fi: Te saatte sen takaisin.
+  sentence_fi_masked: Te %%%% sen takaisin.
+  answer_fi: saatte
+  sentence_en: You get it back.
+  sentence_en_masked: You %%%% it back.
+  generation: *id006
+- verb: saada
+  verb_form: 3pl
+  sentence_fi: He saavat tämän asian.
+  sentence_fi_masked: He %%%% tämän asian.
+  answer_fi: saavat
+  sentence_en: They get this thing.
+  sentence_en_masked: They %%%% this thing.
+  generation: *id006
+- verb: saada
+  verb_form: 3pl
+  sentence_fi: He saavat hänet sisään.
+  sentence_fi_masked: He %%%% hänet sisään.
+  answer_fi: saavat
+  sentence_en: They get him inside.
+  sentence_en_masked: They %%%% him inside.
+  generation: *id006
+- verb: saada
+  verb_form: imperative
+  sentence_fi: Saa hänet sisään.
+  sentence_fi_masked: '%%%% hänet sisään.'
+  answer_fi: Saa
+  sentence_en: Get him inside.
+  sentence_en_masked: '%%%% him inside.'
+  generation: *id006
+- verb: saada
+  verb_form: imperative
+  sentence_fi: Saa se takaisin.
+  sentence_fi_masked: '%%%% se takaisin.'
+  answer_fi: Saa
+  sentence_en: Get it back.
+  sentence_en_masked: '%%%% it back.'
+  generation: *id006
+- verb: saada
+  verb_form: negative
+  sentence_fi: Minä en saa sitä täältä.
+  sentence_fi_masked: Minä en %%%% sitä täältä.
+  answer_fi: saa
+  sentence_en: I do not get it from here.
+  sentence_en_masked: I do not %%%% it from here.
+  generation: *id006
+- verb: saada
+  verb_form: negative
+  sentence_fi: Hän ei saa heitä sisään.
+  sentence_fi_masked: Hän ei %%%% heitä sisään.
+  answer_fi: saa
+  sentence_en: He does not get them inside.
+  sentence_en_masked: He does not %%%% them inside.
+  generation: *id006
+- verb: tulla
+  verb_form: 1sg
+  sentence_fi: Minä tulen täältä.
+  sentence_fi_masked: Minä %%%% täältä.
+  answer_fi: tulen
+  sentence_en: I come from here.
+  sentence_en_masked: I %%%% from here.
+  generation: &id007
+    lexicon_path: data/fi_50k.yaml
+    verb_rows:
+      start: '1'
+      end: '200'
+    vocabulary_rows:
+      start: '1001'
+      end: '1100'
+- verb: tulla
+  verb_form: 1sg
+  sentence_fi: Minä tulen teitä vastaan.
+  sentence_fi_masked: Minä %%%% teitä vastaan.
+  answer_fi: tulen
+  sentence_en: I come to meet you.
+  sentence_en_masked: I %%%% to meet you.
+  generation: *id007
+- verb: tulla
+  verb_form: 2sg
+  sentence_fi: Sinä tulet sisään.
+  sentence_fi_masked: Sinä %%%% sisään.
+  answer_fi: tulet
+  sentence_en: You come in.
+  sentence_en_masked: You %%%% in.
+  generation: *id007
+- verb: tulla
+  verb_form: 2sg
+  sentence_fi: Sinä tulet pojan takia.
+  sentence_fi_masked: Sinä %%%% pojan takia.
+  answer_fi: tulet
+  sentence_en: You come because of the boy.
+  sentence_en_masked: You %%%% because of the boy.
+  generation: *id007
+- verb: tulla
+  verb_form: 3sg
+  sentence_fi: Hän tulee sisään.
+  sentence_fi_masked: Hän %%%% sisään.
+  answer_fi: tulee
+  sentence_en: He comes in.
+  sentence_en_masked: He %%%% in.
+  generation: *id007
+- verb: tulla
+  verb_form: 3sg
+  sentence_fi: Se tulee täältä.
+  sentence_fi_masked: Se %%%% täältä.
+  answer_fi: tulee
+  sentence_en: It comes from here.
+  sentence_en_masked: It %%%% from here.
+  generation: *id007
+- verb: tulla
+  verb_form: 1pl
+  sentence_fi: Me tulemme asian takia.
+  sentence_fi_masked: Me %%%% asian takia.
+  answer_fi: tulemme
+  sentence_en: We come because of the issue.
+  sentence_en_masked: We %%%% because of the issue.
+  generation: *id007
+- verb: tulla
+  verb_form: 1pl
+  sentence_fi: Me tulemme teitä vastaan.
+  sentence_fi_masked: Me %%%% teitä vastaan.
+  answer_fi: tulemme
+  sentence_en: We come to meet you.
+  sentence_en_masked: We %%%% to meet you.
+  generation: *id007
+- verb: tulla
+  verb_form: 2pl
+  sentence_fi: Te tulette sisään.
+  sentence_fi_masked: Te %%%% sisään.
+  answer_fi: tulette
+  sentence_en: You come in.
+  sentence_en_masked: You %%%% in.
+  generation: *id007
+- verb: tulla
+  verb_form: 2pl
+  sentence_fi: Te tulette heitä vastaan.
+  sentence_fi_masked: Te %%%% heitä vastaan.
+  answer_fi: tulette
+  sentence_en: You come to meet them.
+  sentence_en_masked: You %%%% to meet them.
+  generation: *id007
+- verb: tulla
+  verb_form: 3pl
+  sentence_fi: He tulevat täältä.
+  sentence_fi_masked: He %%%% täältä.
+  answer_fi: tulevat
+  sentence_en: They come from here.
+  sentence_en_masked: They %%%% from here.
+  generation: *id007
+- verb: tulla
+  verb_form: 3pl
+  sentence_fi: He tulevat pojan takia.
+  sentence_fi_masked: He %%%% pojan takia.
+  answer_fi: tulevat
+  sentence_en: They come because of the boy.
+  sentence_en_masked: They %%%% because of the boy.
+  generation: *id007
+- verb: tulla
+  verb_form: imperative
+  sentence_fi: Tule sisään.
+  sentence_fi_masked: '%%%% sisään.'
+  answer_fi: Tule
+  sentence_en: Come in.
+  sentence_en_masked: '%%%% in.'
+  generation: *id007
+- verb: tulla
+  verb_form: imperative
+  sentence_fi: Tule heitä vastaan.
+  sentence_fi_masked: '%%%% heitä vastaan.'
+  answer_fi: Tule
+  sentence_en: Come meet them.
+  sentence_en_masked: '%%%% meet them.'
+  generation: *id007
+- verb: tulla
+  verb_form: negative
+  sentence_fi: Minä en tule täältä.
+  sentence_fi_masked: Minä en %%%% täältä.
+  answer_fi: tule
+  sentence_en: I do not come from here.
+  sentence_en_masked: I do not %%%% from here.
+  generation: *id007
+- verb: tulla
+  verb_form: negative
+  sentence_fi: He eivät tule sisään.
+  sentence_fi_masked: He eivät %%%% sisään.
+  answer_fi: tule
+  sentence_en: They do not come in.
+  sentence_en_masked: They do not %%%% in.
+  generation: *id007
+- verb: antaa
+  verb_form: 1sg
+  sentence_fi: Minä annan teetä nyt.
+  sentence_fi_masked: Minä %%%% teetä nyt.
+  answer_fi: annan
+  sentence_en: I give tea now.
+  sentence_en_masked: I %%%% tea now.
+  generation: &id008
+    lexicon_path: data/fi_50k.yaml
+    verb_rows:
+      start: '1'
+      end: '200'
+    vocabulary_rows:
+      start: '1001'
+      end: '1100'
+- verb: antaa
+  verb_form: 1sg
+  sentence_fi: Minä annan rahaa pojan takia.
+  sentence_fi_masked: Minä %%%% rahaa pojan takia.
+  answer_fi: annan
+  sentence_en: I give money because of the boy.
+  sentence_en_masked: I %%%% money because of the boy.
+  generation: *id008
+- verb: antaa
+  verb_form: 2sg
+  sentence_fi: Sinä annat tämän asian minulle.
+  sentence_fi_masked: Sinä %%%% tämän asian minulle.
+  answer_fi: annat
+  sentence_en: You give me this thing.
+  sentence_en_masked: You %%%% me this thing.
+  generation: *id008
+- verb: antaa
+  verb_form: 2sg
+  sentence_fi: Sinä annat teetä täällä.
+  sentence_fi_masked: Sinä %%%% teetä täällä.
+  answer_fi: annat
+  sentence_en: You give tea here.
+  sentence_en_masked: You %%%% tea here.
+  generation: *id008
+- verb: antaa
+  verb_form: 3sg
+  sentence_fi: Hän antaa tämän asian meille.
+  sentence_fi_masked: Hän %%%% tämän asian meille.
+  answer_fi: antaa
+  sentence_en: He gives us this thing.
+  sentence_en_masked: He %%%% us this thing.
+  generation: *id008
+- verb: antaa
+  verb_form: 3sg
+  sentence_fi: Hän antaa enemmän rahaa nyt.
+  sentence_fi_masked: Hän %%%% enemmän rahaa nyt.
+  answer_fi: antaa
+  sentence_en: He gives more money now.
+  sentence_en_masked: He %%%% more money now.
+  generation: *id008
+- verb: antaa
+  verb_form: 1pl
+  sentence_fi: Me annamme teetä teille.
+  sentence_fi_masked: Me %%%% teetä teille.
+  answer_fi: annamme
+  sentence_en: We give you tea.
+  sentence_en_masked: We %%%% you tea.
+  generation: *id008
+- verb: antaa
+  verb_form: 1pl
+  sentence_fi: Me annamme rahaa asian takia.
+  sentence_fi_masked: Me %%%% rahaa asian takia.
+  answer_fi: annamme
+  sentence_en: We give money because of the thing.
+  sentence_en_masked: We %%%% money because of the thing.
+  generation: *id008
+- verb: antaa
+  verb_form: 2pl
+  sentence_fi: Te annatte tämän asian hänelle.
+  sentence_fi_masked: Te %%%% tämän asian hänelle.
+  answer_fi: annatte
+  sentence_en: You give this thing to her.
+  sentence_en_masked: You %%%% this thing to her.
+  generation: *id008
+- verb: antaa
+  verb_form: 2pl
+  sentence_fi: Te annatte teetä minulle.
+  sentence_fi_masked: Te %%%% teetä minulle.
+  answer_fi: annatte
+  sentence_en: You give me tea.
+  sentence_en_masked: You %%%% me tea.
+  generation: *id008
+- verb: antaa
+  verb_form: 3pl
+  sentence_fi: He antavat rahaa pojalle.
+  sentence_fi_masked: He %%%% rahaa pojalle.
+  answer_fi: antavat
+  sentence_en: They give money to the boy.
+  sentence_en_masked: They %%%% money to the boy.
+  generation: *id008
+- verb: antaa
+  verb_form: 3pl
+  sentence_fi: He antavat enemmän teetä täällä.
+  sentence_fi_masked: He %%%% enemmän teetä täällä.
+  answer_fi: antavat
+  sentence_en: They give more tea here.
+  sentence_en_masked: They %%%% more tea here.
+  generation: *id008
+- verb: antaa
+  verb_form: imperative
+  sentence_fi: Anna teetä minulle.
+  sentence_fi_masked: '%%%% teetä minulle.'
+  answer_fi: Anna
+  sentence_en: Give me tea.
+  sentence_en_masked: '%%%% me tea.'
+  generation: *id008
+- verb: antaa
+  verb_form: imperative
+  sentence_fi: Anna tämä asia hänelle.
+  sentence_fi_masked: '%%%% tämä asia hänelle.'
+  answer_fi: Anna
+  sentence_en: Give this thing to him.
+  sentence_en_masked: '%%%% this thing to him.'
+  generation: *id008
+- verb: antaa
+  verb_form: negative
+  sentence_fi: Minä en anna rahaa nyt.
+  sentence_fi_masked: Minä en %%%% rahaa nyt.
+  answer_fi: anna
+  sentence_en: I do not give money now.
+  sentence_en_masked: I do not %%%% money now.
+  generation: *id008
+- verb: antaa
+  verb_form: negative
+  sentence_fi: He eivät anna teetä täällä.
+  sentence_fi_masked: He eivät %%%% teetä täällä.
+  answer_fi: anna
+  sentence_en: They do not give tea here.
+  sentence_en_masked: They do not %%%% tea here.
+  generation: *id008
+- verb: nähdä
+  verb_form: 1sg
+  sentence_fi: Minä näen pojan täältä.
+  sentence_fi_masked: Minä %%%% pojan täältä.
+  answer_fi: näen
+  sentence_en: I see the boy from here.
+  sentence_en_masked: I %%%% the boy from here.
+  generation: &id009
+    lexicon_path: data/fi_50k.yaml
+    verb_rows:
+      start: '1'
+      end: '200'
+    vocabulary_rows:
+      start: '1001'
+      end: '1100'
+- verb: nähdä
+  verb_form: 1sg
+  sentence_fi: Minä näen sisään täältä.
+  sentence_fi_masked: Minä %%%% sisään täältä.
+  answer_fi: näen
+  sentence_en: I see inside from here.
+  sentence_en_masked: I %%%% inside from here.
+  generation: *id009
+- verb: nähdä
+  verb_form: 2sg
+  sentence_fi: Sinä näet asian näin.
+  sentence_fi_masked: Sinä %%%% asian näin.
+  answer_fi: näet
+  sentence_en: You see the thing like this.
+  sentence_en_masked: You %%%% the thing like this.
+  generation: *id009
+- verb: nähdä
+  verb_form: 2sg
+  sentence_fi: Sinä näet heidät täältä.
+  sentence_fi_masked: Sinä %%%% heidät täältä.
+  answer_fi: näet
+  sentence_en: You see them from here.
+  sentence_en_masked: You %%%% them from here.
+  generation: *id009
+- verb: nähdä
+  verb_form: 3sg
+  sentence_fi: Hän näkee pojan nyt.
+  sentence_fi_masked: Hän %%%% pojan nyt.
+  answer_fi: näkee
+  sentence_en: He sees the boy now.
+  sentence_en_masked: He %%%% the boy now.
+  generation: *id009
+- verb: nähdä
+  verb_form: 3sg
+  sentence_fi: Hän näkee asian täältä.
+  sentence_fi_masked: Hän %%%% asian täältä.
+  answer_fi: näkee
+  sentence_en: He sees the thing from here.
+  sentence_en_masked: He %%%% the thing from here.
+  generation: *id009
+- verb: nähdä
+  verb_form: 1pl
+  sentence_fi: Me näemme heidät nyt.
+  sentence_fi_masked: Me %%%% heidät nyt.
+  answer_fi: näemme
+  sentence_en: We see them now.
+  sentence_en_masked: We %%%% them now.
+  generation: *id009
+- verb: nähdä
+  verb_form: 1pl
+  sentence_fi: Me näemme asian näin.
+  sentence_fi_masked: Me %%%% asian näin.
+  answer_fi: näemme
+  sentence_en: We see the thing like this.
+  sentence_en_masked: We %%%% the thing like this.
+  generation: *id009
+- verb: nähdä
+  verb_form: 2pl
+  sentence_fi: Te näette pojan täältä.
+  sentence_fi_masked: Te %%%% pojan täältä.
+  answer_fi: näette
+  sentence_en: You see the boy from here.
+  sentence_en_masked: You %%%% the boy from here.
+  generation: *id009
+- verb: nähdä
+  verb_form: 2pl
+  sentence_fi: Te näette sisään täältä.
+  sentence_fi_masked: Te %%%% sisään täältä.
+  answer_fi: näette
+  sentence_en: You see inside from here.
+  sentence_en_masked: You %%%% inside from here.
+  generation: *id009
+- verb: nähdä
+  verb_form: 3pl
+  sentence_fi: He näkevät asian nyt.
+  sentence_fi_masked: He %%%% asian nyt.
+  answer_fi: näkevät
+  sentence_en: They see the thing now.
+  sentence_en_masked: They %%%% the thing now.
+  generation: *id009
+- verb: nähdä
+  verb_form: 3pl
+  sentence_fi: He näkevät enemmän nyt.
+  sentence_fi_masked: He %%%% enemmän nyt.
+  answer_fi: näkevät
+  sentence_en: They see more now.
+  sentence_en_masked: They %%%% more now.
+  generation: *id009
+- verb: nähdä
+  verb_form: imperative
+  sentence_fi: Näe asia näin.
+  sentence_fi_masked: '%%%% asia näin.'
+  answer_fi: Näe
+  sentence_en: See the thing like this.
+  sentence_en_masked: '%%%% the thing like this.'
+  generation: *id009
+- verb: nähdä
+  verb_form: imperative
+  sentence_fi: Näe enemmän täältä.
+  sentence_fi_masked: '%%%% enemmän täältä.'
+  answer_fi: Näe
+  sentence_en: See more from here.
+  sentence_en_masked: '%%%% more from here.'
+  generation: *id009
+- verb: nähdä
+  verb_form: negative
+  sentence_fi: Minä en näe poikaa täältä.
+  sentence_fi_masked: Minä en %%%% poikaa täältä.
+  answer_fi: näe
+  sentence_en: I do not see the boy from here.
+  sentence_en_masked: I do not %%%% the boy from here.
+  generation: *id009
+- verb: nähdä
+  verb_form: negative
+  sentence_fi: He eivät näe asiaa nyt.
+  sentence_fi_masked: He eivät %%%% asiaa nyt.
+  answer_fi: näe
+  sentence_en: They do not see the thing now.
+  sentence_en_masked: They do not %%%% the thing now.
+  generation: *id009
+- verb: olla
+  verb_form: 1sg
+  sentence_fi: Minä olen täällä.
+  sentence_fi_masked: Minä %%%% täällä.
+  answer_fi: olen
+  sentence_en: I am here.
+  sentence_en_masked: I %%%% here.
+  generation: &id010
+    lexicon_path: data/fi_50k.yaml
+    variant: 'null'
+    verb_rows:
+      start: '1'
+      end: '40'
+    vocabulary_rows:
+      start: '1'
+      end: '1000'
+- verb: olla
+  verb_form: 1sg
+  sentence_fi: Minä olen pahoillani.
+  sentence_fi_masked: Minä %%%% pahoillani.
+  answer_fi: olen
+  sentence_en: I am sorry.
+  sentence_en_masked: I %%%% sorry.
+  generation: *id010
+- verb: olla
+  verb_form: 2sg
+  sentence_fi: Sinä olet täällä.
+  sentence_fi_masked: Sinä %%%% täällä.
+  answer_fi: olet
+  sentence_en: You are here.
+  sentence_en_masked: You %%%% here.
+  generation: *id010
+- verb: olla
+  verb_form: 2sg
+  sentence_fi: Sinä olet kiltti.
+  sentence_fi_masked: Sinä %%%% kiltti.
+  answer_fi: olet
+  sentence_en: You are kind.
+  sentence_en_masked: You %%%% kind.
+  generation: *id010
+- verb: olla
+  verb_form: 3sg
+  sentence_fi: Hän on äiti.
+  sentence_fi_masked: Hän %%%% äiti.
+  answer_fi: 'on'
+  sentence_en: She is a mother.
+  sentence_en_masked: She %%%% a mother.
+  generation: *id010
+- verb: olla
+  verb_form: 3sg
+  sentence_fi: Se on selvä.
+  sentence_fi_masked: Se %%%% selvä.
+  answer_fi: 'on'
+  sentence_en: It is clear.
+  sentence_en_masked: It %%%% clear.
+  generation: *id010
+- verb: olla
+  verb_form: 1pl
+  sentence_fi: Me olemme täällä.
+  sentence_fi_masked: Me %%%% täällä.
+  answer_fi: olemme
+  sentence_en: We are here.
+  sentence_en_masked: We %%%% here.
+  generation: *id010
+- verb: olla
+  verb_form: 1pl
+  sentence_fi: Me olemme valmiina.
+  sentence_fi_masked: Me %%%% valmiina.
+  answer_fi: olemme
+  sentence_en: We are ready.
+  sentence_en_masked: We %%%% ready.
+  generation: *id010
+- verb: olla
+  verb_form: 2pl
+  sentence_fi: Te olette täällä.
+  sentence_fi_masked: Te %%%% täällä.
+  answer_fi: olette
+  sentence_en: You are here.
+  sentence_en_masked: You %%%% here.
+  generation: *id010
+- verb: olla
+  verb_form: 2pl
+  sentence_fi: Te olette poissa.
+  sentence_fi_masked: Te %%%% poissa.
+  answer_fi: olette
+  sentence_en: You are away.
+  sentence_en_masked: You %%%% away.
+  generation: *id010
+- verb: olla
+  verb_form: 3pl
+  sentence_fi: He ovat täällä.
+  sentence_fi_masked: He %%%% täällä.
+  answer_fi: ovat
+  sentence_en: They are here.
+  sentence_en_masked: They %%%% here.
+  generation: *id010
+- verb: olla
+  verb_form: 3pl
+  sentence_fi: He ovat valmiina.
+  sentence_fi_masked: He %%%% valmiina.
+  answer_fi: ovat
+  sentence_en: They are ready.
+  sentence_en_masked: They %%%% ready.
+  generation: *id010
+- verb: olla
+  verb_form: imperative
+  sentence_fi: Ole hiljaa.
+  sentence_fi_masked: '%%%% hiljaa.'
+  answer_fi: Ole
+  sentence_en: Be quiet.
+  sentence_en_masked: '%%%% quiet.'
+  generation: *id010
+- verb: olla
+  verb_form: imperative
+  sentence_fi: Ole kiltti.
+  sentence_fi_masked: '%%%% kiltti.'
+  answer_fi: Ole
+  sentence_en: Be kind.
+  sentence_en_masked: '%%%% kind.'
+  generation: *id010
+- verb: olla
+  verb_form: negative
+  sentence_fi: Minä en ole täällä.
+  sentence_fi_masked: Minä en %%%% täällä.
+  answer_fi: ole
+  sentence_en: I am not here.
+  sentence_en_masked: I %%%% not here.
+  generation: *id010
+- verb: olla
+  verb_form: negative
+  sentence_fi: Se ei ole minun.
+  sentence_fi_masked: Se ei %%%% minun.
+  answer_fi: ole
+  sentence_en: It is not mine.
+  sentence_en_masked: It %%%% not mine.
+  generation: *id010
+- verb: voida
+  verb_form: 1sg
+  sentence_fi: Minä voin ilman tätä.
+  sentence_fi_masked: Minä %%%% ilman tätä.
+  answer_fi: voin
+  sentence_en: I manage without this.
+  sentence_en_masked: I %%%% without this.
+  generation: &id011
+    lexicon_path: data/fi_50k.yaml
+    variant: null
+    verb_rows:
+      start: 1
+      end: 40
+    vocabulary_rows:
+      start: 1
+      end: 1000
+- verb: voida
+  verb_form: 1sg
+  sentence_fi: Minä voin jo paremmin.
+  sentence_fi_masked: Minä %%%% jo paremmin.
+  answer_fi: voin
+  sentence_en: I feel better already.
+  sentence_en_masked: I %%%% better already.
+  generation: *id011
+- verb: voida
+  verb_form: 2sg
+  sentence_fi: Sinä voit ilman minua.
+  sentence_fi_masked: Sinä %%%% ilman minua.
+  answer_fi: voit
+  sentence_en: You manage without me.
+  sentence_en_masked: You %%%% without me.
+  generation: *id011
+- verb: voida
+  verb_form: 2sg
+  sentence_fi: Sinä voit tänään hyvin.
+  sentence_fi_masked: Sinä %%%% tänään hyvin.
+  answer_fi: voit
+  sentence_en: You feel well today.
+  sentence_en_masked: You %%%% well today.
+  generation: *id011
+- verb: voida
+  verb_form: 3sg
+  sentence_fi: Hän voi ilman meitä.
+  sentence_fi_masked: Hän %%%% ilman meitä.
+  answer_fi: voi
+  sentence_en: He or she manages without us.
+  sentence_en_masked: He or she %%%% without us.
+  generation: *id011
+- verb: voida
+  verb_form: 3sg
+  sentence_fi: Hän voi nyt paremmin.
+  sentence_fi_masked: Hän %%%% nyt paremmin.
+  answer_fi: voi
+  sentence_en: He or she feels better now.
+  sentence_en_masked: He or she %%%% better now.
+  generation: *id011
+- verb: voida
+  verb_form: 1pl
+  sentence_fi: Me voimme ilman sitä.
+  sentence_fi_masked: Me %%%% ilman sitä.
+  answer_fi: voimme
+  sentence_en: We manage without it.
+  sentence_en_masked: We %%%% without it.
+  generation: *id011
+- verb: voida
+  verb_form: 1pl
+  sentence_fi: Me voimme tänään hyvin.
+  sentence_fi_masked: Me %%%% tänään hyvin.
+  answer_fi: voimme
+  sentence_en: We feel well today.
+  sentence_en_masked: We %%%% well today.
+  generation: *id011
+- verb: voida
+  verb_form: 2pl
+  sentence_fi: Te voitte ilman meitä.
+  sentence_fi_masked: Te %%%% ilman meitä.
+  answer_fi: voitte
+  sentence_en: You manage without us.
+  sentence_en_masked: You %%%% without us.
+  generation: *id011
+- verb: voida
+  verb_form: 2pl
+  sentence_fi: Te voitte nyt paremmin.
+  sentence_fi_masked: Te %%%% nyt paremmin.
+  answer_fi: voitte
+  sentence_en: You feel better now.
+  sentence_en_masked: You %%%% better now.
+  generation: *id011
+- verb: voida
+  verb_form: 3pl
+  sentence_fi: He voivat ilman tätä.
+  sentence_fi_masked: He %%%% ilman tätä.
+  answer_fi: voivat
+  sentence_en: They manage without this.
+  sentence_en_masked: They %%%% without this.
+  generation: *id011
+- verb: voida
+  verb_form: 3pl
+  sentence_fi: He voivat nyt paljon paremmin.
+  sentence_fi_masked: He %%%% nyt paljon paremmin.
+  answer_fi: voivat
+  sentence_en: They feel much better now.
+  sentence_en_masked: They %%%% much better now.
+  generation: *id011
+- verb: voida
+  verb_form: imperative
+  sentence_fi: Voi jo paremmin.
+  sentence_fi_masked: '%%%% jo paremmin.'
+  answer_fi: Voi
+  sentence_en: Feel better already.
+  sentence_en_masked: '%%%% better already.'
+  generation: *id011
+- verb: voida
+  verb_form: imperative
+  sentence_fi: Voi ilman tätä.
+  sentence_fi_masked: '%%%% ilman tätä.'
+  answer_fi: Voi
+  sentence_en: Manage without this.
+  sentence_en_masked: '%%%% without this.'
+  generation: *id011
+- verb: voida
+  verb_form: negative
+  sentence_fi: Minä en voi hyvin tänään.
+  sentence_fi_masked: Minä en %%%% hyvin tänään.
+  answer_fi: voi
+  sentence_en: I do not feel well today.
+  sentence_en_masked: I do not %%%% well today.
+  generation: *id011
+- verb: voida
+  verb_form: negative
+  sentence_fi: He eivät voi ilman minua.
+  sentence_fi_masked: He eivät %%%% ilman minua.
+  answer_fi: voi
+  sentence_en: They do not manage without me.
+  sentence_en_masked: They do not %%%% without me.
+  generation: *id011
