@@ -5,6 +5,370 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>fi-game</title>
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <style>
+      :root {
+        --bg: #d8e5f2;
+        --bg-soft: #eef5fb;
+        --ink: #17212d;
+        --muted: #607187;
+        --card: rgba(246, 250, 255, 0.84);
+        --line: rgba(46, 74, 110, 0.14);
+        --accent: #4d8ed6;
+        --accent-deep: #285f9d;
+        --accent-soft: #b5d3f4;
+        --success: #22686e;
+        --success-soft: #d8eef0;
+        --danger: #8f435f;
+        --danger-soft: #f5dee7;
+        --info: #335f97;
+        --info-soft: #dde9f8;
+        --shadow: 0 24px 60px rgba(44, 70, 104, 0.16);
+        --radius-xl: 32px;
+        --radius-md: 16px;
+        --display-font: "Avenir Next Condensed", "Arial Narrow", "Franklin Gothic Medium",
+          "Helvetica Neue", sans-serif;
+        --body-font: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        font-family: var(--body-font);
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(119, 174, 227, 0.34), transparent 28%),
+          radial-gradient(circle at 88% 12%, rgba(213, 232, 252, 0.74), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(106, 161, 207, 0.18), transparent 22%),
+          linear-gradient(180deg, #edf5fc 0%, #e4eef8 46%, #dbe8f5 100%);
+      }
+
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        z-index: 0;
+        inset: auto;
+        border-radius: 999px;
+        pointer-events: none;
+        filter: blur(10px);
+      }
+
+      body::before {
+        width: 260px;
+        height: 260px;
+        top: 8%;
+        right: -60px;
+        background: rgba(94, 154, 214, 0.2);
+      }
+
+      body::after {
+        width: 320px;
+        height: 320px;
+        left: -120px;
+        bottom: -60px;
+        background: rgba(219, 238, 255, 0.6);
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+      }
+
+      .page-shell {
+        width: min(1100px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 28px 0 40px;
+      }
+
+      .page-intro {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 16px;
+        padding: 0 6px;
+      }
+
+      .page-intro-badge {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.62);
+        border: 1px solid rgba(46, 74, 110, 0.1);
+        color: var(--accent-deep);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .page-intro p {
+        margin: 0;
+        max-width: 52ch;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .game-panel {
+        display: grid;
+        gap: 22px;
+        padding: clamp(20px, 4vw, 36px);
+        border-radius: var(--radius-xl);
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(16px);
+      }
+
+      .panel-top {
+        display: inline-flex;
+        justify-content: flex-end;
+      }
+
+      .prompt-card {
+        display: grid;
+        gap: 18px;
+        padding: clamp(20px, 4vw, 32px);
+        border-radius: calc(var(--radius-xl) - 6px);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(237, 246, 255, 0.92));
+        border: 1px solid rgba(46, 74, 110, 0.08);
+      }
+
+      .sentence-display {
+        margin: 0;
+        font-family: var(--display-font);
+        font-size: clamp(1.95rem, 4.8vw, 4.05rem);
+        line-height: 1.06;
+        letter-spacing: -0.04em;
+      }
+
+      .sentence-display .blank {
+        display: inline-block;
+        min-width: 1.9em;
+        padding: 0 0.12em 0.06em;
+        border-bottom: 0.12em solid var(--accent);
+        color: var(--accent-deep);
+      }
+
+      .sentence-form {
+        display: grid;
+        gap: 16px;
+      }
+
+      .inline-answer-input {
+        width: 3ch;
+        min-width: 2.4ch;
+        max-width: min(10ch, 36vw);
+        margin: 0 0.14em;
+        padding: 0 0.12em 0.02em;
+        border: 0;
+        border-bottom: 0.12em solid var(--accent);
+        border-radius: 0;
+        background: transparent;
+        color: var(--accent-deep);
+        font: inherit;
+        letter-spacing: inherit;
+        text-align: center;
+      }
+
+      .inline-answer-input::placeholder {
+        color: rgba(77, 142, 214, 0.42);
+      }
+
+      .inline-answer-input:focus {
+        outline: none;
+        border-bottom-color: var(--accent-deep);
+        box-shadow: 0 10px 24px rgba(77, 142, 214, 0.14);
+      }
+
+      .inline-answer-solved {
+        display: inline-block;
+        margin: 0 0.14em;
+        padding: 0 0.12em 0.02em;
+        border-bottom: 0.12em solid var(--accent);
+        color: var(--accent-deep);
+      }
+
+      .feedback {
+        padding: 14px 16px;
+        border-radius: var(--radius-md);
+        border: 1px solid transparent;
+        font-size: 1rem;
+      }
+
+      .feedback-success {
+        color: var(--success);
+        background: var(--success-soft);
+        border-color: rgba(37, 109, 79, 0.12);
+      }
+
+      .feedback-error {
+        color: var(--danger);
+        background: var(--danger-soft);
+        border-color: rgba(154, 47, 47, 0.14);
+      }
+
+      .feedback-info {
+        color: var(--info);
+        background: var(--info-soft);
+        border-color: rgba(53, 93, 140, 0.14);
+      }
+
+      .button-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .inline-form {
+        margin: 0;
+      }
+
+      .button {
+        appearance: none;
+        border: 0;
+        border-radius: 999px;
+        padding: 14px 20px;
+        font-family: var(--display-font);
+        font-size: 1rem;
+        letter-spacing: 0.01em;
+        cursor: pointer;
+        transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button:disabled,
+      .button[aria-disabled="true"] {
+        cursor: not-allowed;
+        transform: none;
+        opacity: 0.46;
+        box-shadow: none;
+      }
+
+      .button-primary {
+        color: white;
+        background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+        box-shadow: 0 16px 24px rgba(40, 95, 157, 0.24);
+      }
+
+      .button-secondary {
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.84);
+        border: 1px solid rgba(77, 55, 39, 0.12);
+      }
+
+      .button-ghost {
+        color: var(--accent-deep);
+        background: rgba(181, 211, 244, 0.32);
+        border: 1px solid rgba(77, 142, 214, 0.2);
+      }
+
+      .hint-grid {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .hint-actions {
+        padding-top: 8px;
+      }
+
+      .hint-card {
+        padding: 16px 18px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.82);
+      }
+
+      .hint-card h3 {
+        margin: 0 0 8px;
+        font-family: var(--display-font);
+        font-size: 1.05rem;
+      }
+
+      .hint-card p {
+        margin: 0;
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      .hint-soft {
+        background: rgba(240, 247, 255, 0.94);
+      }
+
+      .hint-warm {
+        background: rgba(225, 239, 255, 0.94);
+      }
+
+      .hint-accent {
+        background: rgba(199, 224, 248, 0.42);
+      }
+
+      .hint-strong {
+        background: rgba(217, 238, 240, 0.94);
+      }
+
+      @media (max-width: 760px) {
+        .page-shell {
+          width: min(100vw - 20px, 1100px);
+          padding-top: 18px;
+        }
+
+        .button {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .inline-form {
+          width: 100%;
+        }
+
+        .sentence-display {
+          font-size: clamp(1.8rem, 9vw, 2.75rem);
+        }
+
+        .inline-answer-input,
+        .inline-answer-solved {
+          max-width: min(9ch, 42vw);
+        }
+      }
+    </style>
+    <script>
+      function resizeInlineAnswer(input) {
+        if (!input) {
+          return;
+        }
+
+        const nextWidth = Math.max(3, input.value.length + 1);
+        input.style.width = `${nextWidth}ch`;
+      }
+
+      function focusPrimaryInput() {
+        const input = document.querySelector("[data-autofocus]");
+        if (input) {
+          resizeInlineAnswer(input);
+          input.focus();
+          if (typeof input.select === "function") {
+            input.select();
+          }
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", focusPrimaryInput);
+      document.body.addEventListener("htmx:afterSettle", focusPrimaryInput);
+    </script>
   </head>
   <body>
     <main id="app">{% block content %}{% endblock %}</main>

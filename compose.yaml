@@ -2,7 +2,7 @@ services:
   web:
     build: .
     ports:
-      - "${APP_PORT:-8000}:8000"
+      - "${APP_PORT:-8422}:8000"
     volumes:
       - .:/app
       - /app/.venv

@@ -1,3 +1,12 @@
 {% extends "base.html" %}
 
-{% block content %}{% endblock %}
+{% block content %}
+  <div class="page-shell">
+    <section class="page-intro">
+      <div class="page-intro-badge">Verb practice</div>
+      <p>Fill the missing Finnish verb, use hints when needed, and move on when the sentence clicks.</p>
+    </section>
+
+    {% include "partials/game_panel.html" %}
+  </div>
+{% endblock %}

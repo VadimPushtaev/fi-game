@@ -48,9 +48,9 @@ Build and start the app with Docker Compose:
 docker compose up --build
 ```
 
-The app will be available at `http://127.0.0.1:8000`.
+The app will be available at `http://127.0.0.1:8422`.
 
-If port `8000` is already in use, override the host port:
+If port `8422` is already in use, override the host port:
 
 ```bash
 APP_PORT=8080 docker compose up --build

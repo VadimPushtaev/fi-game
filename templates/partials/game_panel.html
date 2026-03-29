@@ -1,0 +1,97 @@
+<section id="game-panel" class="game-panel">
+  <div class="panel-top">
+    <form
+      class="inline-form"
+      hx-post="/game/next"
+      hx-target="#game-panel"
+      hx-swap="outerHTML"
+    >
+      <button
+        type="submit"
+        class="button button-secondary"
+        {% if not can_next %}disabled aria-disabled="true"{% endif %}
+      >
+        Next sentence
+      </button>
+    </form>
+  </div>
+
+  <article class="prompt-card">
+    {% if show_input %}
+      <form
+        class="sentence-form"
+        hx-post="/game/check"
+        hx-target="#game-panel"
+        hx-swap="outerHTML"
+      >
+        <h2 class="sentence-display">
+          <span>{{ sentence_before }}</span>
+          <input
+            class="inline-answer-input"
+            type="text"
+            name="answer"
+            aria-label="Missing Finnish verb"
+            autocomplete="off"
+            spellcheck="false"
+            value="{{ draft_answer }}"
+            size="{{ draft_answer_width }}"
+            style="width: {{ draft_answer_width }}ch;"
+            oninput="resizeInlineAnswer(this)"
+            data-autofocus
+          />
+          <span>{{ sentence_after }}</span>
+        </h2>
+        <div class="button-row">
+          <button type="submit" class="button button-primary">Check</button>
+        </div>
+      </form>
+    {% else %}
+      <h2 class="sentence-display">
+        <span>{{ sentence_before }}</span>
+        <span class="inline-answer-solved">{{ card.answer_fi }}</span>
+        <span>{{ sentence_after }}</span>
+      </h2>
+    {% endif %}
+
+    {% if feedback %}
+      <div class="feedback feedback-{{ feedback.kind }}" aria-live="polite">
+        {{ feedback.message }}
+      </div>
+    {% endif %}
+
+    {% if not show_input %}
+      <div class="feedback feedback-success">
+        This card is done. Take the next one when you want to keep going.
+      </div>
+    {% endif %}
+
+    <div class="hint-grid" aria-live="polite">
+      {% for hint in hints %}
+        <article class="hint-card hint-{{ hint.tone }}">
+          <h3>{{ hint.title }}</h3>
+          <p>
+            {% if hint.title == "English without the verb" %}
+              {{ hint.value | replace("%%%%", '<span class="blank">____</span>') | safe }}
+            {% else %}
+              {{ hint.value }}
+            {% endif %}
+          </p>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="button-row hint-actions">
+      {% for hint_action in available_hint_actions %}
+        <form
+          class="inline-form"
+          hx-post="/game/hint"
+          hx-target="#game-panel"
+          hx-swap="outerHTML"
+        >
+          <input type="hidden" name="hint_level" value="{{ hint_action.level }}" />
+          <button type="submit" class="button button-ghost">{{ hint_action.label }}</button>
+        </form>
+      {% endfor %}
+    </div>
+  </article>
+</section>
