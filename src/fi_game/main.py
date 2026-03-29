@@ -9,7 +9,7 @@ templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 
 def create_app() -> FastAPI:
-    app = FastAPI(title="fi-sv-spel")
+    app = FastAPI(title="fi-game")
 
     @app.get("/", response_class=HTMLResponse)
     async def index(request: Request) -> HTMLResponse:

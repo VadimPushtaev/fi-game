@@ -12,7 +12,7 @@ SRC_DIR = ROOT_DIR / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-from fi_sv_spel.lexicon import DEFAULT_PROMPT_PATH, DEFAULT_YAML_PATH, BatchGenerator, resolve_repo_path
+from fi_game.lexicon import DEFAULT_PROMPT_PATH, DEFAULT_YAML_PATH, BatchGenerator, resolve_repo_path
 
 
 def parse_args() -> argparse.Namespace:

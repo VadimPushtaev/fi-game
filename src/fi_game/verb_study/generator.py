@@ -10,8 +10,8 @@ from typing import Any, Callable
 import yaml
 from jinja2 import Template
 
-from fi_sv_spel.lexicon import YamlLexiconStore
-from fi_sv_spel.lexicon.batch import load_yaml_sequence
+from fi_game.lexicon import YamlLexiconStore
+from fi_game.lexicon.batch import load_yaml_sequence
 
 
 ROOT_DIR = Path(__file__).resolve().parents[3]

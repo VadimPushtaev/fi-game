@@ -1,7 +1,7 @@
 [project]
-name = "fi-sv-spel"
+name = "fi-game"
 version = "0.1.0"
-description = "A web game for learning Finnish through Swedish."
+description = "A web game for studying Finnish."
 authors = [{ name = "Vadim" }]
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{ include = "fi_sv_spel", from = "src" }]
+packages = [{ include = "fi_game", from = "src" }]
 
 [tool.poetry.group.dev.dependencies]
 httpx = "^0.28.0"

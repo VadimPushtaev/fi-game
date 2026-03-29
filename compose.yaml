@@ -9,7 +9,7 @@ services:
     command:
       [
         "uvicorn",
-        "fi_sv_spel.main:app",
+        "fi_game.main:app",
         "--host",
         "0.0.0.0",
         "--port",

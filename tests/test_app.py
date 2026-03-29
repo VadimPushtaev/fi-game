@@ -1,7 +1,7 @@
 import httpx
 import pytest
 
-from fi_sv_spel.main import app
+from fi_game.main import app
 
 
 @pytest.mark.anyio

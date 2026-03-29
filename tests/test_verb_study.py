@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 import yaml
 
-from fi_sv_spel.verb_study import (
+from fi_game.verb_study import (
     VerbStudyLexiconSlice,
     VerbStudyOutputStore,
     deduplicate_study_verbs,

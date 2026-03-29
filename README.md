@@ -1,6 +1,6 @@
-# fi-sv-spel
+# fi-game
 
-`fi-sv-spel` is a web-based game for learning Finnish through Swedish.
+`fi-game` is a web-based game for studying Finnish.
 
 This repository currently contains the project bootstrap only:
 
@@ -35,7 +35,7 @@ poetry install
 Run the app locally:
 
 ```bash
-poetry run uvicorn fi_sv_spel.main:app --reload
+poetry run uvicorn fi_game.main:app --reload
 ```
 
 The app will be available at `http://127.0.0.1:8000`.
@@ -85,7 +85,7 @@ poetry run pre-commit run --all-files
 |-- Dockerfile
 |-- pyproject.toml
 |-- src/
-|   `-- fi_sv_spel/
+|   `-- fi_game/
 |       |-- __init__.py
 |       `-- main.py
 |-- templates/
