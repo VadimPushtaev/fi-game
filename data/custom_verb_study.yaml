@@ -1,0 +1,1232 @@
+- verb: olla
+  verb_form: 1sg
+  sentence_fi: Minä olen täällä nyt.
+  sentence_fi_masked: Minä %%%% täällä nyt.
+  answer_fi: olen
+  sentence_en: I am here now.
+  sentence_en_masked: I %%%% here now.
+- verb: olla
+  verb_form: 1sg
+  sentence_fi: Minä olen sinun kanssa.
+  sentence_fi_masked: Minä %%%% sinun kanssa.
+  answer_fi: olen
+  sentence_en: I am with you.
+  sentence_en_masked: I %%%% with you.
+- verb: olla
+  verb_form: 2sg
+  sentence_fi: Sinä olet tässä nyt.
+  sentence_fi_masked: Sinä %%%% tässä nyt.
+  answer_fi: olet
+  sentence_en: You are here now.
+  sentence_en_masked: You %%%% here now.
+- verb: olla
+  verb_form: 2sg
+  sentence_fi: Sinä olet hyvä.
+  sentence_fi_masked: Sinä %%%% hyvä.
+  answer_fi: olet
+  sentence_en: You are good.
+  sentence_en_masked: You %%%% good.
+- verb: olla
+  verb_form: 3sg
+  sentence_fi: Hän on siellä nyt.
+  sentence_fi_masked: Hän %%%% siellä nyt.
+  answer_fi: 'on'
+  sentence_en: She is there now.
+  sentence_en_masked: She %%%% there now.
+- verb: olla
+  verb_form: 3sg
+  sentence_fi: Se on selvä.
+  sentence_fi_masked: Se %%%% selvä.
+  answer_fi: 'on'
+  sentence_en: It is clear.
+  sentence_en_masked: It %%%% clear.
+- verb: olla
+  verb_form: 1pl
+  sentence_fi: Me olemme täällä nyt.
+  sentence_fi_masked: Me %%%% täällä nyt.
+  answer_fi: olemme
+  sentence_en: We are here now.
+  sentence_en_masked: We %%%% here now.
+- verb: olla
+  verb_form: 1pl
+  sentence_fi: Me olemme hänen kanssa.
+  sentence_fi_masked: Me %%%% hänen kanssa.
+  answer_fi: olemme
+  sentence_en: We are with her.
+  sentence_en_masked: We %%%% with her.
+- verb: olla
+  verb_form: 2pl
+  sentence_fi: Te olette siellä nyt.
+  sentence_fi_masked: Te %%%% siellä nyt.
+  answer_fi: olette
+  sentence_en: You are there now.
+  sentence_en_masked: You %%%% there now.
+- verb: olla
+  verb_form: 2pl
+  sentence_fi: Te olette hyvä, herra.
+  sentence_fi_masked: Te %%%% hyvä, herra.
+  answer_fi: olette
+  sentence_en: You are good, sir.
+  sentence_en_masked: You %%%% good, sir.
+- verb: olla
+  verb_form: 3pl
+  sentence_fi: He ovat tässä nyt.
+  sentence_fi_masked: He %%%% tässä nyt.
+  answer_fi: ovat
+  sentence_en: They are here now.
+  sentence_en_masked: They %%%% here now.
+- verb: olla
+  verb_form: 3pl
+  sentence_fi: He ovat minun kanssa.
+  sentence_fi_masked: He %%%% minun kanssa.
+  answer_fi: ovat
+  sentence_en: They are with me.
+  sentence_en_masked: They %%%% with me.
+- verb: olla
+  verb_form: imperative
+  sentence_fi: Ole täällä nyt.
+  sentence_fi_masked: '%%%% täällä nyt.'
+  answer_fi: ole
+  sentence_en: Be here now.
+  sentence_en_masked: '%%%% here now.'
+- verb: olla
+  verb_form: imperative
+  sentence_fi: Ole hyvä.
+  sentence_fi_masked: '%%%% hyvä.'
+  answer_fi: ole
+  sentence_en: Be good.
+  sentence_en_masked: '%%%% good.'
+- verb: olla
+  verb_form: negative
+  sentence_fi: Minä en ole siellä nyt.
+  sentence_fi_masked: Minä en %%%% siellä nyt.
+  answer_fi: ole
+  sentence_en: I am not there now.
+  sentence_en_masked: I %%%% not there now.
+- verb: olla
+  verb_form: negative
+  sentence_fi: Se ei ole hyvä.
+  sentence_fi_masked: Se ei %%%% hyvä.
+  answer_fi: ole
+  sentence_en: It is not good.
+  sentence_en_masked: It %%%% not good.
+- verb: voida
+  verb_form: 1sg
+  sentence_fi: Minä voin hyvin, kiitos.
+  sentence_fi_masked: Minä %%%% hyvin, kiitos.
+  answer_fi: voin
+  sentence_en: I feel well, thanks.
+  sentence_en_masked: I %%%% well, thanks.
+- verb: voida
+  verb_form: 1sg
+  sentence_fi: Miten minä voin nyt?
+  sentence_fi_masked: Miten minä %%%% nyt?
+  answer_fi: voin
+  sentence_en: How do I feel now?
+  sentence_en_masked: How do I %%%% now?
+- verb: voida
+  verb_form: 2sg
+  sentence_fi: Sinä voit nyt hyvin.
+  sentence_fi_masked: Sinä %%%% nyt hyvin.
+  answer_fi: voit
+  sentence_en: You feel well now.
+  sentence_en_masked: You %%%% well now.
+- verb: voida
+  verb_form: 2sg
+  sentence_fi: Miten sinä voit täällä?
+  sentence_fi_masked: Miten sinä %%%% täällä?
+  answer_fi: voit
+  sentence_en: How do you feel here?
+  sentence_en_masked: How do you %%%% here?
+- verb: voida
+  verb_form: 3sg
+  sentence_fi: Hän voi kyllä hyvin.
+  sentence_fi_masked: Hän %%%% kyllä hyvin.
+  answer_fi: voi
+  sentence_en: She does feel well.
+  sentence_en_masked: She does %%%% well.
+- verb: voida
+  verb_form: 3sg
+  sentence_fi: Miksi hän voi niin hyvin?
+  sentence_fi_masked: Miksi hän %%%% niin hyvin?
+  answer_fi: voi
+  sentence_en: Why does she feel so well?
+  sentence_en_masked: Why does she %%%% so well?
+- verb: voida
+  verb_form: 1pl
+  sentence_fi: Me voimme täällä hyvin.
+  sentence_fi_masked: Me %%%% täällä hyvin.
+  answer_fi: voimme
+  sentence_en: We feel well here.
+  sentence_en_masked: We %%%% well here.
+- verb: voida
+  verb_form: 1pl
+  sentence_fi: Miten me voimme nyt?
+  sentence_fi_masked: Miten me %%%% nyt?
+  answer_fi: voimme
+  sentence_en: How do we feel now?
+  sentence_en_masked: How do we %%%% now?
+- verb: voida
+  verb_form: 2pl
+  sentence_fi: Te voitte hyvin, herra.
+  sentence_fi_masked: Te %%%% hyvin, herra.
+  answer_fi: voitte
+  sentence_en: You feel well, sir.
+  sentence_en_masked: You %%%% well, sir.
+- verb: voida
+  verb_form: 2pl
+  sentence_fi: Miten te voitte nyt?
+  sentence_fi_masked: Miten te %%%% nyt?
+  answer_fi: voitte
+  sentence_en: How do you feel now?
+  sentence_en_masked: How do you %%%% now?
+- verb: voida
+  verb_form: 3pl
+  sentence_fi: He voivat vielä hyvin.
+  sentence_fi_masked: He %%%% vielä hyvin.
+  answer_fi: voivat
+  sentence_en: They still feel well.
+  sentence_en_masked: They still %%%% well.
+- verb: voida
+  verb_form: 3pl
+  sentence_fi: Miten he voivat täällä?
+  sentence_fi_masked: Miten he %%%% täällä?
+  answer_fi: voivat
+  sentence_en: How do they feel here?
+  sentence_en_masked: How do they %%%% here?
+- verb: voida
+  verb_form: imperative
+  sentence_fi: Voi hyvin nyt.
+  sentence_fi_masked: '%%%% hyvin nyt.'
+  answer_fi: Voi
+  sentence_en: Feel well now.
+  sentence_en_masked: '%%%% well now.'
+- verb: voida
+  verb_form: imperative
+  sentence_fi: Voi hyvin, herra.
+  sentence_fi_masked: '%%%% hyvin, herra.'
+  answer_fi: Voi
+  sentence_en: Feel well, sir.
+  sentence_en_masked: '%%%% well, sir.'
+- verb: voida
+  verb_form: negative
+  sentence_fi: Minä en voi nyt hyvin.
+  sentence_fi_masked: Minä en %%%% nyt hyvin.
+  answer_fi: voi
+  sentence_en: I do not feel well now.
+  sentence_en_masked: I do not %%%% well now.
+- verb: voida
+  verb_form: negative
+  sentence_fi: Miksi hän ei voi hyvin?
+  sentence_fi_masked: Miksi hän ei %%%% hyvin?
+  answer_fi: voi
+  sentence_en: Why does she not feel well?
+  sentence_en_masked: Why does she not %%%% well?
+- verb: pitää
+  verb_form: 1sg
+  sentence_fi: Minä pidän tämän täällä.
+  sentence_fi_masked: Minä %%%% tämän täällä.
+  answer_fi: pidän
+  sentence_en: I keep this here.
+  sentence_en_masked: I %%%% this here.
+- verb: pitää
+  verb_form: 1sg
+  sentence_fi: Miksi minä pidän sen vain tässä?
+  sentence_fi_masked: Miksi minä %%%% sen vain tässä?
+  answer_fi: pidän
+  sentence_en: Why do I keep it only here?
+  sentence_en_masked: Why do I %%%% it only here?
+- verb: pitää
+  verb_form: 2sg
+  sentence_fi: Sinä pidät tämän siellä.
+  sentence_fi_masked: Sinä %%%% tämän siellä.
+  answer_fi: pidät
+  sentence_en: You keep this there.
+  sentence_en_masked: You %%%% this there.
+- verb: pitää
+  verb_form: 2sg
+  sentence_fi: Miksi sinä pidät sen nyt tässä?
+  sentence_fi_masked: Miksi sinä %%%% sen nyt tässä?
+  answer_fi: pidät
+  sentence_en: Why do you keep it here now?
+  sentence_en_masked: Why do you %%%% it here now?
+- verb: pitää
+  verb_form: 3sg
+  sentence_fi: Hän pitää tämän tässä.
+  sentence_fi_masked: Hän %%%% tämän tässä.
+  answer_fi: pitää
+  sentence_en: He keeps this here.
+  sentence_en_masked: He %%%% this here.
+- verb: pitää
+  verb_form: 3sg
+  sentence_fi: Hän pitää sen siellä vielä.
+  sentence_fi_masked: Hän %%%% sen siellä vielä.
+  answer_fi: pitää
+  sentence_en: She keeps it there still.
+  sentence_en_masked: She %%%% it there still.
+- verb: pitää
+  verb_form: 1pl
+  sentence_fi: Me pidämme tämän täällä.
+  sentence_fi_masked: Me %%%% tämän täällä.
+  answer_fi: pidämme
+  sentence_en: We keep this here.
+  sentence_en_masked: We %%%% this here.
+- verb: pitää
+  verb_form: 1pl
+  sentence_fi: Miksi me pidämme sen vain siinä?
+  sentence_fi_masked: Miksi me %%%% sen vain siinä?
+  answer_fi: pidämme
+  sentence_en: Why do we keep it only there?
+  sentence_en_masked: Why do we %%%% it only there?
+- verb: pitää
+  verb_form: 2pl
+  sentence_fi: Te pidätte tämän nyt tässä.
+  sentence_fi_masked: Te %%%% tämän nyt tässä.
+  answer_fi: pidätte
+  sentence_en: You keep this here now.
+  sentence_en_masked: You %%%% this here now.
+- verb: pitää
+  verb_form: 2pl
+  sentence_fi: Te pidätte sen siellä vielä.
+  sentence_fi_masked: Te %%%% sen siellä vielä.
+  answer_fi: pidätte
+  sentence_en: You keep it there still.
+  sentence_en_masked: You %%%% it there still.
+- verb: pitää
+  verb_form: 3pl
+  sentence_fi: He pitävät tämän tässä.
+  sentence_fi_masked: He %%%% tämän tässä.
+  answer_fi: pitävät
+  sentence_en: They keep this here.
+  sentence_en_masked: They %%%% this here.
+- verb: pitää
+  verb_form: 3pl
+  sentence_fi: Miksi he pitävät sen siellä?
+  sentence_fi_masked: Miksi he %%%% sen siellä?
+  answer_fi: pitävät
+  sentence_en: Why do they keep it there?
+  sentence_en_masked: Why do they %%%% it there?
+- verb: pitää
+  verb_form: imperative
+  sentence_fi: Pidä tämä tässä.
+  sentence_fi_masked: '%%%% tämä tässä.'
+  answer_fi: Pidä
+  sentence_en: Keep this here.
+  sentence_en_masked: '%%%% this here.'
+- verb: pitää
+  verb_form: imperative
+  sentence_fi: Pidä se siellä nyt.
+  sentence_fi_masked: '%%%% se siellä nyt.'
+  answer_fi: Pidä
+  sentence_en: Keep it there now.
+  sentence_en_masked: '%%%% it there now.'
+- verb: pitää
+  verb_form: negative
+  sentence_fi: Minä en pidä tätä täällä.
+  sentence_fi_masked: Minä en %%%% tätä täällä.
+  answer_fi: pidä
+  sentence_en: I do not keep this here.
+  sentence_en_masked: I do not %%%% this here.
+- verb: pitää
+  verb_form: negative
+  sentence_fi: Hän ei pidä sitä siinä.
+  sentence_fi_masked: Hän ei %%%% sitä siinä.
+  answer_fi: pidä
+  sentence_en: She does not keep it there.
+  sentence_en_masked: She does not %%%% it there.
+- verb: tietää
+  verb_form: 1sg
+  sentence_fi: Minä tiedän tämän nyt.
+  sentence_fi_masked: Minä %%%% tämän nyt.
+  answer_fi: tiedän
+  sentence_en: I know this now.
+  sentence_en_masked: I %%%% this now.
+- verb: tietää
+  verb_form: 1sg
+  sentence_fi: Minä tiedän vastauksen.
+  sentence_fi_masked: Minä %%%% vastauksen.
+  answer_fi: tiedän
+  sentence_en: I know the answer.
+  sentence_en_masked: I %%%% the answer.
+- verb: tietää
+  verb_form: 2sg
+  sentence_fi: Sinä kyllä tiedät sen.
+  sentence_fi_masked: Sinä kyllä %%%% sen.
+  answer_fi: tiedät
+  sentence_en: You certainly know it.
+  sentence_en_masked: You certainly %%%% it.
+- verb: tietää
+  verb_form: 2sg
+  sentence_fi: Sinä tiedät nimen.
+  sentence_fi_masked: Sinä %%%% nimen.
+  answer_fi: tiedät
+  sentence_en: You know the name.
+  sentence_en_masked: You %%%% the name.
+- verb: tietää
+  verb_form: 3sg
+  sentence_fi: Hän tietää sen nyt.
+  sentence_fi_masked: Hän %%%% sen nyt.
+  answer_fi: tietää
+  sentence_en: He knows it now.
+  sentence_en_masked: He %%%% it now.
+- verb: tietää
+  verb_form: 3sg
+  sentence_fi: Hän tietää osoitteen.
+  sentence_fi_masked: Hän %%%% osoitteen.
+  answer_fi: tietää
+  sentence_en: He knows the address.
+  sentence_en_masked: He %%%% the address.
+- verb: tietää
+  verb_form: 1pl
+  sentence_fi: Me tiedämme tämän hyvin.
+  sentence_fi_masked: Me %%%% tämän hyvin.
+  answer_fi: tiedämme
+  sentence_en: We know this well.
+  sentence_en_masked: We %%%% this well.
+- verb: tietää
+  verb_form: 1pl
+  sentence_fi: Me tiedämme vastauksen.
+  sentence_fi_masked: Me %%%% vastauksen.
+  answer_fi: tiedämme
+  sentence_en: We know the answer.
+  sentence_en_masked: We %%%% the answer.
+- verb: tietää
+  verb_form: 2pl
+  sentence_fi: Te tiedätte tämän kyllä.
+  sentence_fi_masked: Te %%%% tämän kyllä.
+  answer_fi: tiedätte
+  sentence_en: You certainly know this.
+  sentence_en_masked: You certainly %%%% this.
+- verb: tietää
+  verb_form: 2pl
+  sentence_fi: Te tiedätte paikan.
+  sentence_fi_masked: Te %%%% paikan.
+  answer_fi: tiedätte
+  sentence_en: You know the place.
+  sentence_en_masked: You %%%% the place.
+- verb: tietää
+  verb_form: 3pl
+  sentence_fi: He tietävät sen jo.
+  sentence_fi_masked: He %%%% sen jo.
+  answer_fi: tietävät
+  sentence_en: They know it already.
+  sentence_en_masked: They %%%% it already.
+- verb: tietää
+  verb_form: 3pl
+  sentence_fi: He tietävät nimen.
+  sentence_fi_masked: He %%%% nimen.
+  answer_fi: tietävät
+  sentence_en: They know the name.
+  sentence_en_masked: They %%%% the name.
+- verb: tietää
+  verb_form: imperative
+  sentence_fi: Tiedä vain tämä.
+  sentence_fi_masked: '%%%% vain tämä.'
+  answer_fi: Tiedä
+  sentence_en: Just know this.
+  sentence_en_masked: Just %%%% this.
+- verb: tietää
+  verb_form: imperative
+  sentence_fi: Tiedä se nyt.
+  sentence_fi_masked: '%%%% se nyt.'
+  answer_fi: Tiedä
+  sentence_en: Know it now.
+  sentence_en_masked: '%%%% it now.'
+- verb: tietää
+  verb_form: negative
+  sentence_fi: Minä en tiedä tätä.
+  sentence_fi_masked: Minä en %%%% tätä.
+  answer_fi: tiedä
+  sentence_en: I do not know this.
+  sentence_en_masked: I do not %%%% this.
+- verb: tietää
+  verb_form: negative
+  sentence_fi: He eivät tiedä sitä vielä.
+  sentence_fi_masked: He eivät %%%% sitä vielä.
+  answer_fi: tiedä
+  sentence_en: They do not know that yet.
+  sentence_en_masked: They do not %%%% that yet.
+- verb: tuoda
+  verb_form: 1sg
+  sentence_fi: Minä tuon tämän tänne nyt.
+  sentence_fi_masked: Minä %%%% tämän tänne nyt.
+  answer_fi: tuon
+  sentence_en: I bring this here now.
+  sentence_en_masked: I %%%% this here now.
+- verb: tuoda
+  verb_form: 1sg
+  sentence_fi: Minä tuon sen sinulle vain.
+  sentence_fi_masked: Minä %%%% sen sinulle vain.
+  answer_fi: tuon
+  sentence_en: I bring it only to you.
+  sentence_en_masked: I %%%% it only to you.
+- verb: tuoda
+  verb_form: 2sg
+  sentence_fi: Sinä tuot tämän minulle nyt.
+  sentence_fi_masked: Sinä %%%% tämän minulle nyt.
+  answer_fi: tuot
+  sentence_en: You bring this to me now.
+  sentence_en_masked: You %%%% this to me now.
+- verb: tuoda
+  verb_form: 2sg
+  sentence_fi: Sinä tuot jotain tänne.
+  sentence_fi_masked: Sinä %%%% jotain tänne.
+  answer_fi: tuot
+  sentence_en: You bring something here.
+  sentence_en_masked: You %%%% something here.
+- verb: tuoda
+  verb_form: 3sg
+  sentence_fi: Hän tuo sen tänne nyt.
+  sentence_fi_masked: Hän %%%% sen tänne nyt.
+  answer_fi: tuo
+  sentence_en: He brings it here now.
+  sentence_en_masked: He %%%% it here now.
+- verb: tuoda
+  verb_form: 3sg
+  sentence_fi: Hän tuo tämän minulle.
+  sentence_fi_masked: Hän %%%% tämän minulle.
+  answer_fi: tuo
+  sentence_en: He brings this to me.
+  sentence_en_masked: He %%%% this to me.
+- verb: tuoda
+  verb_form: 1pl
+  sentence_fi: Me tuomme tämän tänne nyt.
+  sentence_fi_masked: Me %%%% tämän tänne nyt.
+  answer_fi: tuomme
+  sentence_en: We bring this here now.
+  sentence_en_masked: We %%%% this here now.
+- verb: tuoda
+  verb_form: 1pl
+  sentence_fi: Me tuomme sen sinulle takaisin.
+  sentence_fi_masked: Me %%%% sen sinulle takaisin.
+  answer_fi: tuomme
+  sentence_en: We bring it back to you.
+  sentence_en_masked: We %%%% it back to you.
+- verb: tuoda
+  verb_form: 2pl
+  sentence_fi: Te tuotte tämän tänne nyt.
+  sentence_fi_masked: Te %%%% tämän tänne nyt.
+  answer_fi: tuotte
+  sentence_en: You bring this here now.
+  sentence_en_masked: You %%%% this here now.
+- verb: tuoda
+  verb_form: 2pl
+  sentence_fi: Te tuotte sen minulle.
+  sentence_fi_masked: Te %%%% sen minulle.
+  answer_fi: tuotte
+  sentence_en: You bring it to me.
+  sentence_en_masked: You %%%% it to me.
+- verb: tuoda
+  verb_form: 3pl
+  sentence_fi: He tuovat sen tänne nyt.
+  sentence_fi_masked: He %%%% sen tänne nyt.
+  answer_fi: tuovat
+  sentence_en: They bring it here now.
+  sentence_en_masked: They %%%% it here now.
+- verb: tuoda
+  verb_form: 3pl
+  sentence_fi: He tuovat jotain minulle.
+  sentence_fi_masked: He %%%% jotain minulle.
+  answer_fi: tuovat
+  sentence_en: They bring something to me.
+  sentence_en_masked: They %%%% something to me.
+- verb: tuoda
+  verb_form: imperative
+  sentence_fi: Tuo jotain tänne nyt.
+  sentence_fi_masked: '%%%% jotain tänne nyt.'
+  answer_fi: tuo
+  sentence_en: Bring something here now.
+  sentence_en_masked: '%%%% something here now.'
+- verb: tuoda
+  verb_form: imperative
+  sentence_fi: Tuo se minulle vain.
+  sentence_fi_masked: '%%%% se minulle vain.'
+  answer_fi: tuo
+  sentence_en: Bring it only to me.
+  sentence_en_masked: '%%%% it only to me.'
+- verb: tuoda
+  verb_form: negative
+  sentence_fi: Minä en tuo sitä tänne.
+  sentence_fi_masked: Minä en %%%% sitä tänne.
+  answer_fi: tuo
+  sentence_en: I do not bring it here.
+  sentence_en_masked: I do not %%%% it here.
+- verb: tuoda
+  verb_form: negative
+  sentence_fi: He eivät tuo mitään minulle.
+  sentence_fi_masked: He eivät %%%% mitään minulle.
+  answer_fi: tuo
+  sentence_en: They do not bring anything to me.
+  sentence_en_masked: They do not %%%% anything to me.
+- verb: haluta
+  verb_form: 1sg
+  sentence_fi: Minä haluan tämän nyt.
+  sentence_fi_masked: Minä %%%% tämän nyt.
+  answer_fi: haluan
+  sentence_en: I want this now.
+  sentence_en_masked: I %%%% this now.
+- verb: haluta
+  verb_form: 1sg
+  sentence_fi: Minä haluan vain jotain hyvää.
+  sentence_fi_masked: Minä %%%% vain jotain hyvää.
+  answer_fi: haluan
+  sentence_en: I only want something good.
+  sentence_en_masked: I only %%%% something good.
+- verb: haluta
+  verb_form: 2sg
+  sentence_fi: Sinä haluat sitä vielä.
+  sentence_fi_masked: Sinä %%%% sitä vielä.
+  answer_fi: haluat
+  sentence_en: You still want that.
+  sentence_en_masked: You still %%%% that.
+- verb: haluta
+  verb_form: 2sg
+  sentence_fi: Miksi sinä haluat tämän täällä?
+  sentence_fi_masked: Miksi sinä %%%% tämän täällä?
+  answer_fi: haluat
+  sentence_en: Why do you want this here?
+  sentence_en_masked: Why do you %%%% this here?
+- verb: haluta
+  verb_form: 3sg
+  sentence_fi: Hän haluaa tämän nyt.
+  sentence_fi_masked: Hän %%%% tämän nyt.
+  answer_fi: haluaa
+  sentence_en: She wants this now.
+  sentence_en_masked: She %%%% this now.
+- verb: haluta
+  verb_form: 3sg
+  sentence_fi: Hän haluaa vain jotain hyvää.
+  sentence_fi_masked: Hän %%%% vain jotain hyvää.
+  answer_fi: haluaa
+  sentence_en: She only wants something good.
+  sentence_en_masked: She only %%%% something good.
+- verb: haluta
+  verb_form: 1pl
+  sentence_fi: Me haluamme sitä vielä.
+  sentence_fi_masked: Me %%%% sitä vielä.
+  answer_fi: haluamme
+  sentence_en: We still want that.
+  sentence_en_masked: We still %%%% that.
+- verb: haluta
+  verb_form: 1pl
+  sentence_fi: Miksi me haluamme tämän nyt?
+  sentence_fi_masked: Miksi me %%%% tämän nyt?
+  answer_fi: haluamme
+  sentence_en: Why do we want this now?
+  sentence_en_masked: Why do we %%%% this now?
+- verb: haluta
+  verb_form: 2pl
+  sentence_fi: Te haluatte tämän täällä.
+  sentence_fi_masked: Te %%%% tämän täällä.
+  answer_fi: haluatte
+  sentence_en: You want this here.
+  sentence_en_masked: You %%%% this here.
+- verb: haluta
+  verb_form: 2pl
+  sentence_fi: Te haluatte vain jotain hyvää.
+  sentence_fi_masked: Te %%%% vain jotain hyvää.
+  answer_fi: haluatte
+  sentence_en: You only want something good.
+  sentence_en_masked: You only %%%% something good.
+- verb: haluta
+  verb_form: 3pl
+  sentence_fi: He haluavat sitä vielä.
+  sentence_fi_masked: He %%%% sitä vielä.
+  answer_fi: haluavat
+  sentence_en: They still want that.
+  sentence_en_masked: They still %%%% that.
+- verb: haluta
+  verb_form: 3pl
+  sentence_fi: Miksi he haluavat tämän nyt?
+  sentence_fi_masked: Miksi he %%%% tämän nyt?
+  answer_fi: haluavat
+  sentence_en: Why do they want this now?
+  sentence_en_masked: Why do they %%%% this now?
+- verb: haluta
+  verb_form: imperative
+  sentence_fi: Halua tätä nyt.
+  sentence_fi_masked: '%%%% tätä nyt.'
+  answer_fi: halua
+  sentence_en: Want this now.
+  sentence_en_masked: '%%%% this now.'
+- verb: haluta
+  verb_form: imperative
+  sentence_fi: Halua vain jotain hyvää.
+  sentence_fi_masked: '%%%% vain jotain hyvää.'
+  answer_fi: halua
+  sentence_en: Only want something good.
+  sentence_en_masked: Only %%%% something good.
+- verb: haluta
+  verb_form: negative
+  sentence_fi: Minä en halua tätä nyt.
+  sentence_fi_masked: Minä en %%%% tätä nyt.
+  answer_fi: halua
+  sentence_en: I do not want this now.
+  sentence_en_masked: I do not %%%% this now.
+- verb: haluta
+  verb_form: negative
+  sentence_fi: He eivät halua mitään vielä.
+  sentence_fi_masked: He eivät %%%% mitään vielä.
+  answer_fi: halua
+  sentence_en: They do not want anything yet.
+  sentence_en_masked: They do not %%%% anything yet.
+- verb: tehdä
+  verb_form: 1sg
+  sentence_fi: Minä teen tämän nyt.
+  sentence_fi_masked: Minä %%%% tämän nyt.
+  answer_fi: teen
+  sentence_en: I do this now.
+  sentence_en_masked: I %%%% this now.
+- verb: tehdä
+  verb_form: 1sg
+  sentence_fi: Minä teen jotain täällä.
+  sentence_fi_masked: Minä %%%% jotain täällä.
+  answer_fi: teen
+  sentence_en: I do something here.
+  sentence_en_masked: I %%%% something here.
+- verb: tehdä
+  verb_form: 2sg
+  sentence_fi: Sinä teet sen hyvin.
+  sentence_fi_masked: Sinä %%%% sen hyvin.
+  answer_fi: teet
+  sentence_en: You do it well.
+  sentence_en_masked: You %%%% it well.
+- verb: tehdä
+  verb_form: 2sg
+  sentence_fi: Sinä teet jotain nyt.
+  sentence_fi_masked: Sinä %%%% jotain nyt.
+  answer_fi: teet
+  sentence_en: You do something now.
+  sentence_en_masked: You %%%% something now.
+- verb: tehdä
+  verb_form: 3sg
+  sentence_fi: Hän tekee tämän siellä.
+  sentence_fi_masked: Hän %%%% tämän siellä.
+  answer_fi: tekee
+  sentence_en: He does this there.
+  sentence_en_masked: He %%%% this there.
+- verb: tehdä
+  verb_form: 3sg
+  sentence_fi: Hän tekee jotain nyt.
+  sentence_fi_masked: Hän %%%% jotain nyt.
+  answer_fi: tekee
+  sentence_en: He does something now.
+  sentence_en_masked: He %%%% something now.
+- verb: tehdä
+  verb_form: 1pl
+  sentence_fi: Me teemme tämän nyt.
+  sentence_fi_masked: Me %%%% tämän nyt.
+  answer_fi: teemme
+  sentence_en: We do this now.
+  sentence_en_masked: We %%%% this now.
+- verb: tehdä
+  verb_form: 1pl
+  sentence_fi: Me teemme jotain täällä.
+  sentence_fi_masked: Me %%%% jotain täällä.
+  answer_fi: teemme
+  sentence_en: We do something here.
+  sentence_en_masked: We %%%% something here.
+- verb: tehdä
+  verb_form: 2pl
+  sentence_fi: Te teette sen hyvin.
+  sentence_fi_masked: Te %%%% sen hyvin.
+  answer_fi: teette
+  sentence_en: You do it well.
+  sentence_en_masked: You %%%% it well.
+- verb: tehdä
+  verb_form: 2pl
+  sentence_fi: Te teette jotain siellä.
+  sentence_fi_masked: Te %%%% jotain siellä.
+  answer_fi: teette
+  sentence_en: You do something there.
+  sentence_en_masked: You %%%% something there.
+- verb: tehdä
+  verb_form: 3pl
+  sentence_fi: He tekevät tämän täällä.
+  sentence_fi_masked: He %%%% tämän täällä.
+  answer_fi: tekevät
+  sentence_en: They do this here.
+  sentence_en_masked: They %%%% this here.
+- verb: tehdä
+  verb_form: 3pl
+  sentence_fi: He tekevät jotain nyt.
+  sentence_fi_masked: He %%%% jotain nyt.
+  answer_fi: tekevät
+  sentence_en: They do something now.
+  sentence_en_masked: They %%%% something now.
+- verb: tehdä
+  verb_form: imperative
+  sentence_fi: Tee tämä nyt.
+  sentence_fi_masked: '%%%% tämä nyt.'
+  answer_fi: tee
+  sentence_en: Do this now.
+  sentence_en_masked: '%%%% this now.'
+- verb: tehdä
+  verb_form: imperative
+  sentence_fi: Tee jotain siellä.
+  sentence_fi_masked: '%%%% jotain siellä.'
+  answer_fi: tee
+  sentence_en: Do something there.
+  sentence_en_masked: '%%%% something there.'
+- verb: tehdä
+  verb_form: negative
+  sentence_fi: Minä en tee tätä nyt.
+  sentence_fi_masked: Minä en %%%% tätä nyt.
+  answer_fi: tee
+  sentence_en: I do not do this now.
+  sentence_en_masked: I do not %%%% this now.
+- verb: tehdä
+  verb_form: negative
+  sentence_fi: He eivät tee mitään täällä.
+  sentence_fi_masked: He eivät %%%% mitään täällä.
+  answer_fi: tee
+  sentence_en: They do not do anything here.
+  sentence_en_masked: They do not %%%% anything here.
+- verb: saada
+  verb_form: 1sg
+  sentence_fi: Minä saan sen nyt.
+  sentence_fi_masked: Minä %%%% sen nyt.
+  answer_fi: saan
+  sentence_en: I get it now.
+  sentence_en_masked: I %%%% it now.
+- verb: saada
+  verb_form: 1sg
+  sentence_fi: Minä saan jotain takaisin.
+  sentence_fi_masked: Minä %%%% jotain takaisin.
+  answer_fi: saan
+  sentence_en: I get something back.
+  sentence_en_masked: I %%%% something back.
+- verb: saada
+  verb_form: 2sg
+  sentence_fi: Sinä saat jotain täällä.
+  sentence_fi_masked: Sinä %%%% jotain täällä.
+  answer_fi: saat
+  sentence_en: You get something here.
+  sentence_en_masked: You %%%% something here.
+- verb: saada
+  verb_form: 2sg
+  sentence_fi: Miksi sinä saat sen?
+  sentence_fi_masked: Miksi sinä %%%% sen?
+  answer_fi: saat
+  sentence_en: Why do you get it?
+  sentence_en_masked: Why do you %%%% it?
+- verb: saada
+  verb_form: 3sg
+  sentence_fi: Hän saa sen nyt.
+  sentence_fi_masked: Hän %%%% sen nyt.
+  answer_fi: saa
+  sentence_en: He gets it now.
+  sentence_en_masked: He %%%% it now.
+- verb: saada
+  verb_form: 3sg
+  sentence_fi: Hän saa jotain vielä.
+  sentence_fi_masked: Hän %%%% jotain vielä.
+  answer_fi: saa
+  sentence_en: He still gets something.
+  sentence_en_masked: He still %%%% something.
+- verb: saada
+  verb_form: 1pl
+  sentence_fi: Me saamme tämän nyt.
+  sentence_fi_masked: Me %%%% tämän nyt.
+  answer_fi: saamme
+  sentence_en: We get this now.
+  sentence_en_masked: We %%%% this now.
+- verb: saada
+  verb_form: 1pl
+  sentence_fi: Miksi me saamme sen?
+  sentence_fi_masked: Miksi me %%%% sen?
+  answer_fi: saamme
+  sentence_en: Why do we get it?
+  sentence_en_masked: Why do we %%%% it?
+- verb: saada
+  verb_form: 2pl
+  sentence_fi: Te saatte sen nyt.
+  sentence_fi_masked: Te %%%% sen nyt.
+  answer_fi: saatte
+  sentence_en: You get it now.
+  sentence_en_masked: You %%%% it now.
+- verb: saada
+  verb_form: 2pl
+  sentence_fi: Miten te saatte tämän?
+  sentence_fi_masked: Miten te %%%% tämän?
+  answer_fi: saatte
+  sentence_en: How do you get this?
+  sentence_en_masked: How do you %%%% this?
+- verb: saada
+  verb_form: 3pl
+  sentence_fi: He saavat tämän nyt.
+  sentence_fi_masked: He %%%% tämän nyt.
+  answer_fi: saavat
+  sentence_en: They get this now.
+  sentence_en_masked: They %%%% this now.
+- verb: saada
+  verb_form: 3pl
+  sentence_fi: Miksi he saavat sen?
+  sentence_fi_masked: Miksi he %%%% sen?
+  answer_fi: saavat
+  sentence_en: Why do they get it?
+  sentence_en_masked: Why do they %%%% it?
+- verb: saada
+  verb_form: imperative
+  sentence_fi: Saa hänet tänne.
+  sentence_fi_masked: '%%%% hänet tänne.'
+  answer_fi: saa
+  sentence_en: Get him here.
+  sentence_en_masked: '%%%% him here.'
+- verb: saada
+  verb_form: imperative
+  sentence_fi: Saa se takaisin.
+  sentence_fi_masked: '%%%% se takaisin.'
+  answer_fi: saa
+  sentence_en: Get it back.
+  sentence_en_masked: '%%%% it back.'
+- verb: saada
+  verb_form: negative
+  sentence_fi: Minä en saa sitä nyt.
+  sentence_fi_masked: Minä en %%%% sitä nyt.
+  answer_fi: saa
+  sentence_en: I do not get it now.
+  sentence_en_masked: I do not %%%% it now.
+- verb: saada
+  verb_form: negative
+  sentence_fi: He eivät saa mitään täällä.
+  sentence_fi_masked: He eivät %%%% mitään täällä.
+  answer_fi: saa
+  sentence_en: They do not get anything here.
+  sentence_en_masked: They do not %%%% anything here.
+- verb: tulla
+  verb_form: 1sg
+  sentence_fi: Minä tulen tänne nyt.
+  sentence_fi_masked: Minä %%%% tänne nyt.
+  answer_fi: tulen
+  sentence_en: I am coming here now.
+  sentence_en_masked: I am %%%% here now.
+- verb: tulla
+  verb_form: 1sg
+  sentence_fi: Minä tulen sinun kanssa.
+  sentence_fi_masked: Minä %%%% sinun kanssa.
+  answer_fi: tulen
+  sentence_en: I am coming with you.
+  sentence_en_masked: I am %%%% with you.
+- verb: tulla
+  verb_form: 2sg
+  sentence_fi: Sinä tulet tänne nyt.
+  sentence_fi_masked: Sinä %%%% tänne nyt.
+  answer_fi: tulet
+  sentence_en: You are coming here now.
+  sentence_en_masked: You are %%%% here now.
+- verb: tulla
+  verb_form: 2sg
+  sentence_fi: Miksi sinä tulet takaisin?
+  sentence_fi_masked: Miksi sinä %%%% takaisin?
+  answer_fi: tulet
+  sentence_en: Why are you coming back?
+  sentence_en_masked: Why are you %%%% back?
+- verb: tulla
+  verb_form: 3sg
+  sentence_fi: Hän tulee tänne nyt.
+  sentence_fi_masked: Hän %%%% tänne nyt.
+  answer_fi: tulee
+  sentence_en: He is coming here now.
+  sentence_en_masked: He is %%%% here now.
+- verb: tulla
+  verb_form: 3sg
+  sentence_fi: Hän tulee minun kanssa.
+  sentence_fi_masked: Hän %%%% minun kanssa.
+  answer_fi: tulee
+  sentence_en: He is coming with me.
+  sentence_en_masked: He is %%%% with me.
+- verb: tulla
+  verb_form: 1pl
+  sentence_fi: Me tulemme tänne nyt.
+  sentence_fi_masked: Me %%%% tänne nyt.
+  answer_fi: tulemme
+  sentence_en: We are coming here now.
+  sentence_en_masked: We are %%%% here now.
+- verb: tulla
+  verb_form: 1pl
+  sentence_fi: Miksi me tulemme takaisin?
+  sentence_fi_masked: Miksi me %%%% takaisin?
+  answer_fi: tulemme
+  sentence_en: Why are we coming back?
+  sentence_en_masked: Why are we %%%% back?
+- verb: tulla
+  verb_form: 2pl
+  sentence_fi: Te tulette tänne nyt.
+  sentence_fi_masked: Te %%%% tänne nyt.
+  answer_fi: tulette
+  sentence_en: You are coming here now.
+  sentence_en_masked: You are %%%% here now.
+- verb: tulla
+  verb_form: 2pl
+  sentence_fi: Te tulette meidän kanssa.
+  sentence_fi_masked: Te %%%% meidän kanssa.
+  answer_fi: tulette
+  sentence_en: You are coming with us.
+  sentence_en_masked: You are %%%% with us.
+- verb: tulla
+  verb_form: 3pl
+  sentence_fi: He tulevat tänne nyt.
+  sentence_fi_masked: He %%%% tänne nyt.
+  answer_fi: tulevat
+  sentence_en: They are coming here now.
+  sentence_en_masked: They are %%%% here now.
+- verb: tulla
+  verb_form: 3pl
+  sentence_fi: Miksi he tulevat takaisin?
+  sentence_fi_masked: Miksi he %%%% takaisin?
+  answer_fi: tulevat
+  sentence_en: Why are they coming back?
+  sentence_en_masked: Why are they %%%% back?
+- verb: tulla
+  verb_form: imperative
+  sentence_fi: Tule tänne nyt.
+  sentence_fi_masked: '%%%% tänne nyt.'
+  answer_fi: Tule
+  sentence_en: Come here now.
+  sentence_en_masked: '%%%% here now.'
+- verb: tulla
+  verb_form: imperative
+  sentence_fi: Tule minun kanssa.
+  sentence_fi_masked: '%%%% minun kanssa.'
+  answer_fi: Tule
+  sentence_en: Come with me.
+  sentence_en_masked: '%%%% with me.'
+- verb: tulla
+  verb_form: negative
+  sentence_fi: Minä en tule nyt.
+  sentence_fi_masked: Minä en %%%% nyt.
+  answer_fi: tule
+  sentence_en: I am not coming now.
+  sentence_en_masked: I am not %%%% now.
+- verb: tulla
+  verb_form: negative
+  sentence_fi: He eivät tule tänne.
+  sentence_fi_masked: He eivät %%%% tänne.
+  answer_fi: tule
+  sentence_en: They are not coming here.
+  sentence_en_masked: They are not %%%% here.
+- verb: antaa
+  verb_form: 1sg
+  sentence_fi: Minä annan tämän sinulle nyt.
+  sentence_fi_masked: Minä %%%% tämän sinulle nyt.
+  answer_fi: annan
+  sentence_en: I give this to you now.
+  sentence_en_masked: I %%%% this to you now.
+- verb: antaa
+  verb_form: 1sg
+  sentence_fi: Minä annan sen pois sitten.
+  sentence_fi_masked: Minä %%%% sen pois sitten.
+  answer_fi: annan
+  sentence_en: I give it away then.
+  sentence_en_masked: I %%%% it away then.
+- verb: antaa
+  verb_form: 2sg
+  sentence_fi: Sinä annat tämän minulle nyt.
+  sentence_fi_masked: Sinä %%%% tämän minulle nyt.
+  answer_fi: annat
+  sentence_en: You give this to me now.
+  sentence_en_masked: You %%%% this to me now.
+- verb: antaa
+  verb_form: 2sg
+  sentence_fi: Sinä annat sen pois nyt.
+  sentence_fi_masked: Sinä %%%% sen pois nyt.
+  answer_fi: annat
+  sentence_en: You give it away now.
+  sentence_en_masked: You %%%% it away now.
+- verb: antaa
+  verb_form: 3sg
+  sentence_fi: Hän antaa tämän minulle nyt.
+  sentence_fi_masked: Hän %%%% tämän minulle nyt.
+  answer_fi: antaa
+  sentence_en: He gives this to me now.
+  sentence_en_masked: He %%%% this to me now.
+- verb: antaa
+  verb_form: 3sg
+  sentence_fi: Miksi hän antaa sen pois?
+  sentence_fi_masked: Miksi hän %%%% sen pois?
+  answer_fi: antaa
+  sentence_en: Why does he give it away?
+  sentence_en_masked: Why does he %%%% it away?
+- verb: antaa
+  verb_form: 1pl
+  sentence_fi: Me annamme tämän sinulle nyt.
+  sentence_fi_masked: Me %%%% tämän sinulle nyt.
+  answer_fi: annamme
+  sentence_en: We give this to you now.
+  sentence_en_masked: We %%%% this to you now.
+- verb: antaa
+  verb_form: 1pl
+  sentence_fi: Me annamme sen takaisin sitten.
+  sentence_fi_masked: Me %%%% sen takaisin sitten.
+  answer_fi: annamme
+  sentence_en: We give it back then.
+  sentence_en_masked: We %%%% it back then.
+- verb: antaa
+  verb_form: 2pl
+  sentence_fi: Te annatte tämän minulle nyt.
+  sentence_fi_masked: Te %%%% tämän minulle nyt.
+  answer_fi: annatte
+  sentence_en: You give this to me now.
+  sentence_en_masked: You %%%% this to me now.
+- verb: antaa
+  verb_form: 2pl
+  sentence_fi: Miksi te annatte sen pois?
+  sentence_fi_masked: Miksi te %%%% sen pois?
+  answer_fi: annatte
+  sentence_en: Why do you give it away?
+  sentence_en_masked: Why do you %%%% it away?
+- verb: antaa
+  verb_form: 3pl
+  sentence_fi: He antavat tämän sinulle nyt.
+  sentence_fi_masked: He %%%% tämän sinulle nyt.
+  answer_fi: antavat
+  sentence_en: They give this to you now.
+  sentence_en_masked: They %%%% this to you now.
+- verb: antaa
+  verb_form: 3pl
+  sentence_fi: He antavat sen pois nyt.
+  sentence_fi_masked: He %%%% sen pois nyt.
+  answer_fi: antavat
+  sentence_en: They give it away now.
+  sentence_en_masked: They %%%% it away now.
+- verb: antaa
+  verb_form: imperative
+  sentence_fi: Anna tämä minulle nyt.
+  sentence_fi_masked: '%%%% tämä minulle nyt.'
+  answer_fi: Anna
+  sentence_en: Give this to me now.
+  sentence_en_masked: '%%%% this to me now.'
+- verb: antaa
+  verb_form: imperative
+  sentence_fi: Anna se takaisin, kiitos.
+  sentence_fi_masked: '%%%% se takaisin, kiitos.'
+  answer_fi: Anna
+  sentence_en: Give it back, please.
+  sentence_en_masked: '%%%% it back, please.'
+- verb: antaa
+  verb_form: negative
+  sentence_fi: Minä en anna tätä sinulle nyt.
+  sentence_fi_masked: Minä en %%%% tätä sinulle nyt.
+  answer_fi: anna
+  sentence_en: I do not give this to you now.
+  sentence_en_masked: I do not %%%% this to you now.
+- verb: antaa
+  verb_form: negative
+  sentence_fi: He eivät anna sitä pois.
+  sentence_fi_masked: He eivät %%%% sitä pois.
+  answer_fi: anna
+  sentence_en: They do not give it away.
+  sentence_en_masked: They do not %%%% it away.
+- verb: nähdä
+  verb_form: 1sg
+  sentence_fi: Minä näen sinut täällä.
+  sentence_fi_masked: Minä %%%% sinut täällä.
+  answer_fi: näen
+  sentence_en: I see you here.
+  sentence_en_masked: I %%%% you here.
+- verb: nähdä
+  verb_form: 1sg
+  sentence_fi: Mitä minä näen nyt?
+  sentence_fi_masked: Mitä minä %%%% nyt?
+  answer_fi: näen
+  sentence_en: What do I see now?
+  sentence_en_masked: What do I %%%% now?
+- verb: nähdä
+  verb_form: 2sg
+  sentence_fi: Sinä näet minut tässä.
+  sentence_fi_masked: Sinä %%%% minut tässä.
+  answer_fi: näet
+  sentence_en: You see me here.
+  sentence_en_masked: You %%%% me here.
+- verb: nähdä
+  verb_form: 2sg
+  sentence_fi: Missä sinä näet sen?
+  sentence_fi_masked: Missä sinä %%%% sen?
+  answer_fi: näet
+  sentence_en: Where do you see it?
+  sentence_en_masked: Where do you %%%% it?
+- verb: nähdä
+  verb_form: 3sg
+  sentence_fi: Hän näkee tämän nyt.
+  sentence_fi_masked: Hän %%%% tämän nyt.
+  answer_fi: näkee
+  sentence_en: She sees this now.
+  sentence_en_masked: She %%%% this now.
+- verb: nähdä
+  verb_form: 3sg
+  sentence_fi: Kyllä hän näkee minut.
+  sentence_fi_masked: Kyllä hän %%%% minut.
+  answer_fi: näkee
+  sentence_en: She does see me.
+  sentence_en_masked: She does %%%% me.
+- verb: nähdä
+  verb_form: 1pl
+  sentence_fi: Me näemme hänet täällä.
+  sentence_fi_masked: Me %%%% hänet täällä.
+  answer_fi: näemme
+  sentence_en: We see him here.
+  sentence_en_masked: We %%%% him here.
+- verb: nähdä
+  verb_form: 1pl
+  sentence_fi: Mitä me näemme siellä?
+  sentence_fi_masked: Mitä me %%%% siellä?
+  answer_fi: näemme
+  sentence_en: What do we see there?
+  sentence_en_masked: What do we %%%% there?
+- verb: nähdä
+  verb_form: 2pl
+  sentence_fi: Te näette tämän nyt.
+  sentence_fi_masked: Te %%%% tämän nyt.
+  answer_fi: näette
+  sentence_en: You see this now.
+  sentence_en_masked: You %%%% this now.
+- verb: nähdä
+  verb_form: 2pl
+  sentence_fi: Missä te näette minut?
+  sentence_fi_masked: Missä te %%%% minut?
+  answer_fi: näette
+  sentence_en: Where do you see me?
+  sentence_en_masked: Where do you %%%% me?
+- verb: nähdä
+  verb_form: 3pl
+  sentence_fi: He näkevät sinut täällä.
+  sentence_fi_masked: He %%%% sinut täällä.
+  answer_fi: näkevät
+  sentence_en: They see you here.
+  sentence_en_masked: They %%%% you here.
+- verb: nähdä
+  verb_form: 3pl
+  sentence_fi: Mitä he näkevät nyt?
+  sentence_fi_masked: Mitä he %%%% nyt?
+  answer_fi: näkevät
+  sentence_en: What do they see now?
+  sentence_en_masked: What do they %%%% now?
+- verb: nähdä
+  verb_form: imperative
+  sentence_fi: Näe tämä nyt.
+  sentence_fi_masked: '%%%% tämä nyt.'
+  answer_fi: Näe
+  sentence_en: See this now.
+  sentence_en_masked: '%%%% this now.'
+- verb: nähdä
+  verb_form: imperative
+  sentence_fi: Näe hänet siellä.
+  sentence_fi_masked: '%%%% hänet siellä.'
+  answer_fi: Näe
+  sentence_en: See him there.
+  sentence_en_masked: '%%%% him there.'
+- verb: nähdä
+  verb_form: negative
+  sentence_fi: Minä en näe sitä nyt.
+  sentence_fi_masked: Minä en %%%% sitä nyt.
+  answer_fi: näe
+  sentence_en: I do not see it now.
+  sentence_en_masked: I do not %%%% it now.
+- verb: nähdä
+  verb_form: negative
+  sentence_fi: Hän ei näe minua täällä.
+  sentence_fi_masked: Hän ei %%%% minua täällä.
+  answer_fi: näe
+  sentence_en: She does not see me here.
+  sentence_en_masked: She does not %%%% me here.

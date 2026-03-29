@@ -81,8 +81,13 @@ def main() -> int:
         output_store=output_store,
     )
 
+    def report_progress(message: str) -> None:
+        print(message, file=sys.stderr, flush=True)
+
     if args.dry_run:
+        report_progress("Resolving verb lemmas for dry-run prompt rendering.")
         study_verbs = study_runner.build_study_verbs(model=args.model)
+        report_progress(f"Found {len(study_verbs)} verb lemma(s) in the selected lexicon slice.")
         allowed_words_by_pos = lexicon_slice.allowed_words_by_pos()
         generator = study_runner.generator
         pending_verb = next(
@@ -90,9 +95,10 @@ def main() -> int:
             None,
         )
         if pending_verb is None:
-            print("All eligible verbs are already complete.")
+            report_progress("All eligible verbs are already complete.")
             return 0
 
+        report_progress(f"Rendering prompt for the first pending lemma: '{pending_verb.lemma}'.")
         prompt = generator.render_prompt(
             lexicon_path=args.lexicon_path,
             output_yaml_path=args.output_path,
@@ -109,6 +115,7 @@ def main() -> int:
         lexicon_path_for_prompt=args.lexicon_path,
         output_yaml_path_for_prompt=args.output_path,
         model=args.model,
+        progress_callback=report_progress,
     )
     print(
         f"Processed {result.total_verbs} verb lemma(s): "

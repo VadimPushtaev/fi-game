@@ -5,7 +5,7 @@ import tempfile
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 import yaml
 from jinja2 import Template
@@ -302,18 +302,10 @@ class VerbStudyOutputStore:
         answer = record["answer_fi"]
         sentence = record["sentence_fi"]
         masked_sentence = record["sentence_fi_masked"]
-        if sentence.count(answer) != 1:
-            raise ValueError(
-                "The Finnish sentence must contain the answer form exactly once so it can be masked "
-                "reliably."
-            )
-
-        expected_masked_sentence = sentence.replace(answer, "%%%%", 1)
-        if masked_sentence != expected_masked_sentence:
-            raise ValueError(
-                "The masked Finnish sentence must equal the original sentence with the answer form "
-                "replaced by %%%%."
-            )
+        if "%%%%" in sentence:
+            raise ValueError("The unmasked Finnish sentence must not contain the %%%% placeholder.")
+        if "%%%%" in answer:
+            raise ValueError("The Finnish answer form must not contain the %%%% placeholder.")
 
         if masked_sentence.count("%%%%") != 1:
             raise ValueError("The masked Finnish sentence must contain exactly one %%%% placeholder.")
@@ -402,20 +394,35 @@ class VerbStudyRunner:
         output_yaml_path_for_prompt: str,
         model: str | None = None,
         dry_run: bool = False,
+        progress_callback: Callable[[str], None] | None = None,
     ) -> VerbStudyRunResult:
+        if progress_callback is not None:
+            progress_callback("Collecting eligible verb forms from the lexicon slice.")
         study_verbs = self.build_study_verbs(model=model)
+        if progress_callback is not None:
+            progress_callback(f"Resolved {len(study_verbs)} verb lemma(s) to process.")
         allowed_words_by_pos = self.lexicon_slice.allowed_words_by_pos()
         generated_verbs = 0
         skipped_verbs = 0
 
-        for study_verb in study_verbs:
+        for index, study_verb in enumerate(study_verbs, start=1):
             if self.output_store.is_complete(study_verb.lemma):
                 skipped_verbs += 1
+                if progress_callback is not None:
+                    progress_callback(
+                        f"[{index}/{len(study_verbs)}] Skipping '{study_verb.lemma}' "
+                        "because it is already complete."
+                    )
                 continue
 
             if dry_run:
                 raise ValueError("Dry-run should be handled before generate_all is called.")
 
+            if progress_callback is not None:
+                progress_callback(
+                    f"[{index}/{len(study_verbs)}] Generating study sentences for "
+                    f"'{study_verb.lemma}'."
+                )
             records = self.generator.generate_records_for_verb(
                 lexicon_path=lexicon_path_for_prompt,
                 output_yaml_path=output_yaml_path_for_prompt,
@@ -426,6 +433,10 @@ class VerbStudyRunner:
             )
             self.output_store.replace_records_for_lemma(study_verb.lemma, records)
             generated_verbs += 1
+            if progress_callback is not None:
+                progress_callback(
+                    f"[{index}/{len(study_verbs)}] Wrote 16 records for '{study_verb.lemma}'."
+                )
 
         return VerbStudyRunResult(
             total_verbs=len(study_verbs),

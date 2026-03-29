@@ -114,6 +114,29 @@ def test_output_store_validates_masking_rules(tmp_path: Path) -> None:
         store.replace_records_for_lemma("puhua", bad_records)
 
 
+def test_output_store_allows_ai_provided_masking_without_mechanical_replacement(tmp_path: Path) -> None:
+    output_path = tmp_path / "verb_study.yaml"
+    store = VerbStudyOutputStore(output_path)
+
+    records = []
+    for verb_form in ("1sg", "2sg", "3sg", "1pl", "2pl", "3pl", "imperative", "negative"):
+        for index in range(2):
+            records.append(
+                {
+                    "verb": "olla",
+                    "verb_form": verb_form,
+                    "sentence_fi": f"Minä olen taas {verb_form} {index}.",
+                    "sentence_fi_masked": f"Minä %%%% taas {verb_form} {index}.",
+                    "answer_fi": "on",
+                    "sentence_en": f"I am again {verb_form} {index}.",
+                    "sentence_en_masked": f"I %%%% again {verb_form} {index}.",
+                }
+            )
+
+    store.replace_records_for_lemma("olla", records)
+    assert store.is_complete("olla")
+
+
 def test_lexicon_slice_preserves_yaml_boolean_like_words(tmp_path: Path) -> None:
     lexicon_path = tmp_path / "fi_50k.yaml"
     lexicon_path.write_text(
